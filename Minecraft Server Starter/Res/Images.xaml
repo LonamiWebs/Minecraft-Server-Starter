@@ -1,0 +1,35 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:system="clr-namespace:System;assembly=mscorlib">
+
+    <!-- Images -->
+    <BitmapImage x:Key="MessageImg"  UriSource="message.png" />
+    <BitmapImage x:Key="PlayImg"     UriSource="play.png" />
+    <BitmapImage x:Key="StopImg"     UriSource="stop.png" />
+    <BitmapImage x:Key="SettingsImg" UriSource="settings.png" />
+    <BitmapImage x:Key="PortImg"     UriSource="port.png" />
+
+    <Image x:Key="Add"     Height="20" Width="20" Source="add.png" />
+    <Image x:Key="Backup"  Height="20" Width="20" Source="backup.png" />
+    <Image x:Key="Ban"     Height="20" Width="20" Source="ban.png" />
+    <Image x:Key="Command" Height="20" Width="20" Source="command.png" />
+    <Image x:Key="Delete"  Height="20" Width="20" Source="delete.png" />
+    <Image x:Key="Deop"    Height="20" Width="20" Source="deop.png" />
+    <Image x:Key="Edit"    Height="20" Width="20" Source="edit.png" />
+    <Image x:Key="Upgrade" Height="20" Width="20" Source="upgrade.png" />
+    <Image x:Key="Message" Height="20" Width="20" Source="message.png" />
+    <Image x:Key="More"    Height="20" Width="20" Source="more.png" />
+    <Image x:Key="Op"      Height="20" Width="20" Source="op.png" />
+    <Image x:Key="Pardon"  Height="20" Width="20" Source="pardon.png" />
+
+    <!-- duplicate, or it won't work! -->
+    <Image x:Key="AlignLeft1"  Height="20" Width="20" Source="align_left.png" />
+    <Image x:Key="AlignCenter1"  Height="20" Width="20" Source="align_center.png" />
+    <Image x:Key="AlignRight1"  Height="20" Width="20" Source="align_right.png" />
+
+    <Image x:Key="AlignLeft2"  Height="20" Width="20" Source="align_left.png" />
+    <Image x:Key="AlignCenter2"  Height="20" Width="20" Source="align_center.png" />
+    <Image x:Key="AlignRight2"  Height="20" Width="20" Source="align_right.png" />
+
+    <ImageBrush x:Key="OptionsBackgroundBrush" ImageSource="options_background.png" TileMode="Tile" Stretch="Uniform" AlignmentY="Top" Viewport="0,0,16,16" ViewportUnits="Absolute" />
+</ResourceDictionary>

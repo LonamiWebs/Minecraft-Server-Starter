@@ -1,0 +1,91 @@
+﻿<UserControl xmlns:local="clr-namespace:Minecraft_Server_Starter" x:Class="Minecraft_Server_Starter.MOTDTextBox"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" MaxWidth="600">
+    <Border CornerRadius="6" Background="{StaticResource OptionsBackgroundBrush}">
+        <Grid>
+            <TextBlock Text="MOTD" FontFamily="Consolas" TextAlignment="Center" Foreground="White" FontSize="16" />
+
+
+            <Border Background="#B0000000" Padding="8" Margin="0,20">
+                <StackPanel Focusable="True">
+                    <StackPanel x:Name="codedColorsPanel" Orientation="Horizontal" />
+        
+                    <StackPanel x:Name="modePanel" Orientation="Horizontal">
+                        <Button x:Name="obfuscatedCheckBox" Style="{StaticResource FlatSquareButton}" Tag="{x:Static local:CharacterStyle.Obfuscated}">
+                            <TextBlock x:Name="obfuscatedText" Text="k" FontFamily="Consolas" Foreground="White" />
+                        </Button>
+                        <Button x:Name="boldCheckBox" Style="{StaticResource FlatSquareButton}" Tag="{x:Static local:CharacterStyle.Bold}">
+                            <TextBlock Text="l" FontWeight="Bold" FontFamily="Consolas" Foreground="White"/>
+                        </Button>
+                        <Button x:Name="strikethroughTextBox" Style="{StaticResource FlatSquareButton}" Tag="{x:Static local:CharacterStyle.Strikethrough}">
+                            <TextBlock FontFamily="Consolas" Foreground="White">
+                                <TextBlock.TextDecorations>
+                                    <TextDecoration Location="Strikethrough">
+                                        <TextDecoration.Pen>
+                                            <Pen Brush="White" />
+                                        </TextDecoration.Pen>
+                                    </TextDecoration>
+                                </TextBlock.TextDecorations>
+                                m
+                            </TextBlock>
+                        </Button>
+                        <Button x:Name="underlineCheckBox" Style="{StaticResource FlatSquareButton}" Tag="{x:Static local:CharacterStyle.Underlined}">
+                            <TextBlock Text="n" FontFamily="Consolas" Foreground="White" TextDecorations="Underline" />
+                        </Button>
+                        <Button x:Name="italicCheckBox" Style="{StaticResource FlatSquareButton}" Tag="{x:Static local:CharacterStyle.Italic}">
+                            <TextBlock Text="o" FontStyle="Italic" FontFamily="Consolas" Foreground="White"/>
+                        </Button>
+                        <Button x:Name="resetCheckBox" Style="{StaticResource FlatSquareButton}" Tag="{x:Static local:CharacterStyle.Reset}">
+                            <TextBlock Text="r" FontFamily="Consolas" Foreground="White" />
+                        </Button>
+                    </StackPanel>
+
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+
+                        <local:StylisedTextBox Grid.Column="0" Grid.Row="0" x:Name="motdLine1" BorderThickness="1,1,1,0" GotFocus="motd_Focused" LostFocus="motd_Unfocused" TextChanged="motd_Changed" />
+                        <local:StylisedTextBox Grid.Column="0" Grid.Row="1" x:Name="motdLine2" BorderThickness="1,0,1,1" GotFocus="motd_Focused" LostFocus="motd_Unfocused" TextChanged="motd_Changed" />
+
+                        <Button Grid.Column="1" Grid.Row="0" Click="leftAlignment1_Click" Style="{StaticResource PlainSquareButton}" Content="{StaticResource AlignLeft1}" />
+                        <Button Grid.Column="2" Grid.Row="0" Click="centerAlignment1_Click" Style="{StaticResource PlainSquareButton}" Content="{StaticResource AlignCenter1}" />
+                        <Button Grid.Column="3" Grid.Row="0" Click="rightAlignment1_Click" Style="{StaticResource PlainSquareButton}" Content="{StaticResource AlignRight1}" />
+
+                        <Button Grid.Column="1" Grid.Row="1" Click="leftAlignment2_Click" Style="{StaticResource PlainSquareButton}" Content="{StaticResource AlignLeft2}" />
+                        <Button Grid.Column="2" Grid.Row="1" Click="centerAlignment2_Click" Style="{StaticResource PlainSquareButton}" Content="{StaticResource AlignCenter2}" />
+                        <Button Grid.Column="3" Grid.Row="1" Click="rightAlignment2_Click" Style="{StaticResource PlainSquareButton}" Content="{StaticResource AlignRight2}" />
+                    </Grid>
+                    <TextBlock Text="Final result:" Foreground="White" Margin="0,12,0,0" />
+                    <Grid>
+                        <Border CornerRadius="4" Padding="4" Margin="4">
+
+                            <StackPanel>
+                                <local:StylisedTextBox x:Name="motdResultLine1" BorderThickness="0" IsReadOnly="True" />
+                                <local:StylisedTextBox x:Name="motdResultLine2" BorderThickness="0" IsReadOnly="True"  />
+                            </StackPanel>
+                        </Border>
+                    </Grid>
+                    <TextBlock Text="server.properties MOTD code:" Foreground="White" Margin="0,12,0,0" />
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        <TextBox x:Name="generatedCode" IsReadOnly="True" Margin="4" FontFamily="Consolas" TextWrapping="NoWrap" />
+                        <Button Grid.Column="1" Content="Copy" Margin="4" Click="copyClick"  />
+                    </Grid>
+                </StackPanel>
+            </Border>
+        </Grid>
+    </Border>
+</UserControl>

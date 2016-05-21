@@ -1,0 +1,328 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{22E6F114-52F5-447E-82A3-D951E5E82E5F}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Minecraft_Server_Starter</RootNamespace>
+    <AssemblyName>Minecraft Server Starter</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>icon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.IO.Compression.FileSystem" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="Classes\MinecraftClasses\Backup.cs" />
+    <Compile Include="Classes\MinecraftClasses\EULA.cs" />
+    <Compile Include="Classes\MinecraftClasses\Heads.cs" />
+    <Compile Include="Classes\MinecraftClasses\MinecraftVersions.cs" />
+    <Compile Include="Classes\MinecraftClasses\MinecraftWorld.cs" />
+    <Compile Include="Classes\MinecraftClasses\ServerJar.cs" />
+    <Compile Include="Classes\MinecraftClasses\ServerProperties.cs" />
+    <Compile Include="Classes\MinecraftClasses\ServerProperty.cs" />
+    <Compile Include="Classes\Utils\BackupSort.cs" />
+    <Compile Include="Classes\Utils\PortManager.cs" />
+    <Compile Include="Classes\Utils\WaitCursor.cs" />
+    <Compile Include="Controls\MOTDTextBox.xaml.cs">
+      <DependentUpon>MOTDTextBox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ServerPropertyControl.cs" />
+    <Compile Include="Controls\StylisedTextBox.cs" />
+    <Compile Include="Open.NAT\Discovery\ISearcher.cs" />
+    <Compile Include="Open.NAT\Discovery\Searcher.cs" />
+    <Compile Include="Open.NAT\Enums\ProtocolType.cs" />
+    <Compile Include="Open.NAT\EventArgs\DeviceEventArgs.cs" />
+    <Compile Include="Open.NAT\Exceptions\MappingException.cs" />
+    <Compile Include="Open.NAT\Exceptions\NatDeviceNotFoundException.cs" />
+    <Compile Include="Open.NAT\Finalizer.cs" />
+    <Compile Include="Open.NAT\Mapping.cs" />
+    <Compile Include="Open.NAT\NatDevice.cs" />
+    <Compile Include="Open.NAT\NatDiscoverer.cs" />
+    <Compile Include="Open.NAT\Pmp\PmpConstants.cs" />
+    <Compile Include="Open.NAT\Pmp\PmpNatDevice.cs" />
+    <Compile Include="Open.NAT\Pmp\PmpSearcher.cs" />
+    <Compile Include="Open.NAT\PortMapper.cs" />
+    <Compile Include="Open.NAT\Upnp\DiscoveryResponseMessage.cs" />
+    <Compile Include="Open.NAT\Upnp\Messages\DiscoverDeviceMessage.cs" />
+    <Compile Include="Open.NAT\Upnp\Messages\Requests\CreatePortMappingMessage.cs" />
+    <Compile Include="Open.NAT\Upnp\Messages\Requests\DeletePortMappingMessage.cs" />
+    <Compile Include="Open.NAT\Upnp\Messages\Requests\GetExternalIPAddressMessage.cs" />
+    <Compile Include="Open.NAT\Upnp\Messages\Requests\GetGenericPortMappingEntry.cs" />
+    <Compile Include="Open.NAT\Upnp\Messages\Requests\GetSpecificPortMappingEntryMessage.cs" />
+    <Compile Include="Open.NAT\Upnp\Messages\Responses\AddPortMappingResponseMessage.cs" />
+    <Compile Include="Open.NAT\Upnp\Messages\Responses\DeletePortMappingResponseMessage.cs" />
+    <Compile Include="Open.NAT\Upnp\Messages\Responses\GetExternalIPAddressResponseMessage.cs" />
+    <Compile Include="Open.NAT\Upnp\Messages\Responses\GetGenericPortMappingEntryResponseMessage.cs" />
+    <Compile Include="Open.NAT\Upnp\RequestMessageBase.cs" />
+    <Compile Include="Open.NAT\Upnp\ResponseMessageBase.cs" />
+    <Compile Include="Open.NAT\Upnp\SoapClient.cs" />
+    <Compile Include="Open.NAT\Upnp\UpnpConstants.cs" />
+    <Compile Include="Open.NAT\Upnp\UpnpNatDevice.cs" />
+    <Compile Include="Open.NAT\Upnp\UpnpNatDeviceInfo.cs" />
+    <Compile Include="Open.NAT\Upnp\UpnpSearcher.cs" />
+    <Compile Include="Open.NAT\Utils\Extensions.cs" />
+    <Compile Include="Open.NAT\Utils\Guard.cs" />
+    <Compile Include="Open.NAT\Utils\IIPAddressesProvider.cs" />
+    <Compile Include="Open.NAT\Utils\IPAddressesProvider.cs" />
+    <Compile Include="Open.NAT\Utils\WellKnownConstants.cs" />
+    <Compile Include="Windows\DeleteServerWindow.xaml.cs">
+      <DependentUpon>DeleteServerWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Res\Res.cs" />
+    <Compile Include="Classes\Utils\Serializer.cs" />
+    <Compile Include="Classes\MinecraftClasses\SkinDownloader.cs" />
+    <Compile Include="Classes\Utils\ExtensionMethods.cs" />
+    <Compile Include="Classes\Utils\UnixDate.cs" />
+    <Compile Include="Controls\ColoredTextBox.cs" />
+    <Compile Include="Windows\Pages\SelectJarPage.xaml.cs">
+      <DependentUpon>SelectJarPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Toast.cs" />
+    <Compile Include="Controls\NumericTextBox.cs" />
+    <Compile Include="Controls\PageTransition.xaml.cs">
+      <DependentUpon>PageTransition.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Pages\GenerateBackupPage.xaml.cs">
+      <DependentUpon>GenerateBackupPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\Utils\Java.cs" />
+    <Compile Include="Windows\Pages\LoadBackupPage.xaml.cs">
+      <DependentUpon>LoadBackupPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Pages\ManageBackupsPage.xaml.cs">
+      <DependentUpon>ManageBackupsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\AddServerWindow.xaml.cs">
+      <DependentUpon>AddServerWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\MinecraftClasses\Server.cs" />
+    <Compile Include="Classes\Utils\Settings.cs" />
+    <Compile Include="Controls\WatermarkAdorner.cs" />
+    <Compile Include="Controls\WatermarkService.cs" />
+    <Compile Include="Windows\BackupWindow.xaml.cs">
+      <DependentUpon>BackupWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\EditServerWindow.xaml.cs">
+      <DependentUpon>EditServerWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\PropertiesEditorWindow.xaml.cs">
+      <DependentUpon>PropertiesEditorWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\SettingsWindow.xaml.cs">
+      <DependentUpon>SettingsWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\UpgradeWindow.xaml.cs">
+      <DependentUpon>UpgradeWindow.xaml</DependentUpon>
+    </Compile>
+    <Page Include="Controls\MOTDTextBox.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\PageTransition.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Windows\DeleteServerWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\Pages\GenerateBackupPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\Pages\LoadBackupPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\Pages\ManageBackupsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Res\Images.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Res\Strings.es-ES.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Res\Strings.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Res\Styles.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\AddServerWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\BackupWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\EditServerWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Windows\MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="Windows\Pages\SelectJarPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\PropertiesEditorWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\SettingsWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\UpgradeWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Classes\MinecraftClasses\MinecraftServer.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Open.NAT\AUTHORS" />
+    <None Include="Open.NAT\LICENSE" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Res\add.png" />
+    <Resource Include="Res\backup.png" />
+    <Resource Include="Res\command.png" />
+    <Resource Include="Res\delete.png" />
+    <Resource Include="Res\edit.png" />
+    <Resource Include="Res\message.png" />
+    <Resource Include="Res\play.png" />
+    <Resource Include="Res\settings.png" />
+    <Resource Include="Res\stop.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Res\ban.png" />
+    <Resource Include="Res\deop.png" />
+    <Resource Include="Res\op.png" />
+    <Resource Include="Res\pardon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Res\more.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Res\port.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="icon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Res\align_center.png" />
+    <Resource Include="Res\align_left.png" />
+    <Resource Include="Res\align_right.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Res\upgrade.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Res\options_background.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

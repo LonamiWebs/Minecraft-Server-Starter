@@ -1,0 +1,29 @@
+﻿<UserControl x:Class="Minecraft_Server_Starter.ManageBackupsPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Minecraft_Server_Starter"
+      mc:Ignorable="d" 
+      d:DesignHeight="300" d:DesignWidth="300" >
+    <StackPanel Margin="4">
+        <!-- title -->
+        <StackPanel Orientation="Horizontal">
+            <TextBlock Text="Please select the backup you want to manage: " VerticalAlignment="Center" />
+            <ComboBox x:Name="backupsList" DisplayMemberPath="DisplayName" SelectionChanged="backupsListChanged" />
+        </StackPanel>
+        <!-- info -->
+        <TextBlock Name="info" Margin="4" />
+        <!-- backup checkboxes -->
+        <StackPanel x:Name="checkBoxes">
+            <CheckBox x:Name="bWorlds" Margin="8,4" IsEnabled="False" Content="Has worlds?" />
+            <CheckBox x:Name="bServerProperties" Margin="8,4" IsEnabled="False" Content="Has server.properties?" />
+            <CheckBox x:Name="bWhiteList" Margin="8,4" IsEnabled="False" Content="Has white list?" />
+            <CheckBox x:Name="bOps" Margin="8,4" IsEnabled="False" Content="Has ops?" />
+            <CheckBox x:Name="bBanned" Margin="8,4" IsEnabled="False" Content="Has banned players and IPs?" />
+            <CheckBox x:Name="bLogs" Margin="8,4" IsEnabled="False" Content="Has logs?" />
+            <CheckBox x:Name="bEverything" Margin="8,4" IsEnabled="False" Content="Has everything (including other folders)?" />
+        </StackPanel>
+        <Button IsEnabled="False" x:Name="delete" Style="{StaticResource PlainButton}" Content="Delete backup" Height="32" Margin="4" Click="deleteClick" />
+    </StackPanel>
+</UserControl>

@@ -1,0 +1,30 @@
+﻿<Window x:Class="Minecraft_Server_Starter.UpgradeWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Minecraft_Server_Starter"
+        Title="Upgrade server" Loaded="Window_Loaded" SizeToContent="WidthAndHeight" ResizeMode="NoResize" MaxWidth="480">
+    <StackPanel Margin="4">
+        <TextBlock Margin="0,0,0,4">
+            <Run x:Name="currentVersion1Run" Text="Analysing current server version..." />
+            <Run x:Name="currentVersion2Run" />
+        </TextBlock>
+        <TextBlock Text="Select the new version you'd like to use:" />
+        <local:SelectJarPage x:Name="selectJarPage"  ListUpdated="SelectJarPage_ListUpdated" />
+        <Separator />
+
+        <TextBlock x:Name="canUpgradeBlock" TextWrapping="Wrap" Margin="4" />
+
+        <Grid Height="32">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <Button Grid.Column="0"  Style="{StaticResource PlainButton}" Content="Cancel" Click="cancelClick" />
+            <Button Grid.Column="1" x:Name="upgradeButton" Style="{StaticResource PlainButton}" Content="Upgrade" Click="upgradeClick" />
+        </Grid>
+        
+    </StackPanel>
+</Window>

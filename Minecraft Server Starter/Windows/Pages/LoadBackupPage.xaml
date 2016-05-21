@@ -1,0 +1,27 @@
+﻿<UserControl x:Class="Minecraft_Server_Starter.LoadBackupPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Minecraft_Server_Starter">
+    <StackPanel Margin="4">
+        <!-- title -->
+        <StackPanel Orientation="Horizontal">
+            <TextBlock Text="Load backup: " VerticalAlignment="Center" />
+            <ComboBox x:Name="backupsList" DisplayMemberPath="DisplayName" SelectionChanged="backupsListChanged" />
+        </StackPanel>
+        <!-- info -->
+        <TextBlock Margin="4" Text="Please select all the options you want to load:" />
+        <!-- backup checkboxes -->
+        <StackPanel x:Name="checkBoxes">
+            <CheckBox x:Name="bWorlds" Margin="8,4" Content="Load worlds" Unchecked="anyUnchecked" />
+            <CheckBox x:Name="bServerProperties" Margin="8,4" Content="Load server.properties" Unchecked="anyUnchecked" />
+            <CheckBox x:Name="bWhiteList" Margin="8,4" Content="Load white list" Unchecked="anyUnchecked" />
+            <CheckBox x:Name="bOps" Margin="8,4" Content="Load ops" Unchecked="anyUnchecked" />
+            <CheckBox x:Name="bBanned" Margin="8,4" Content="Load banned players and IPs" Unchecked="anyUnchecked" />
+            <CheckBox x:Name="bLogs" Margin="8,4" Content="Load logs" Unchecked="anyUnchecked" />
+            <CheckBox x:Name="bEverything" Margin="8,4" Content="Load everything (including other folders)" Checked="everythingChecked" Unchecked="everythingUnchecked" />
+        </StackPanel>
+        <Button x:Name="loadBackup" Style="{StaticResource PlainButton}" Content="Load backup" Height="32" Margin="4" IsEnabled="False" Click="loadBackupClick" />
+    </StackPanel>
+</UserControl>
