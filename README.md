@@ -1,4 +1,4 @@
-# Minecraft-Server-Starter
+# Minecraft Server Starter
 A cool, simple and efficent Minecraft Server Starter for Windows
 
 ## Features
@@ -15,7 +15,7 @@ Add multiple servers, manage them, edit their server.properties files, backup th
 - Find a correct bold factor for `MOTDTextBox.xaml.cs`
 
 ## How to collaborate
-I would really be pleased to see your help, just grab this repository, add your own language or clean the code a bit. Surprise me with a new feature? And I'll merge it to the original branch (if I even know how!)!
+I would really be pleased to see your help, just grab this repository, add your own language or clean the code a bit. Or maybe you could even surprise me with a new feature! And last but not least, after you've done any of this, I'll merge it to the original branch (if I even know how!)!
 
 [cwmain]: https://raw.githubusercontent.com/LonamiWebs/Minecraft-Server-Starter/master/Minecraft%20Server%20Starter/Photos/main_window.png "Main Window"
 [cwsettings]: https://raw.githubusercontent.com/LonamiWebs/Minecraft-Server-Starter/master/Minecraft%20Server%20Starter/Photos/settings_window.png "Settings Window"
