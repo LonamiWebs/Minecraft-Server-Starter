@@ -25,26 +25,7 @@ namespace Minecraft_Server_Starter
         bool loading = true;
 
         #endregion
-
-        #region Properties
-
-        string ServerIconPath
-        {
-            get
-            {
-                var dir = Path.GetDirectoryName(jar.Text);
-                if (string.IsNullOrEmpty(dir))
-                    return null;
-
-                if (!Directory.Exists(dir))
-                    Directory.CreateDirectory(dir);
-
-                return Path.Combine(dir, "server-icon.png");
-            }
-        }
-
-        #endregion
-
+        
         #region Constructor and loading
 
         public EditServerWindow(Server server)
@@ -106,15 +87,15 @@ namespace Minecraft_Server_Starter
             var ofd = new OpenFileDialog { Filter = Res.GetStr("sImageFilter") };
             if (ofd.ShowDialog() ?? false)
             {
-                new Uri(ofd.FileName).LoadImage(64, 64).Save(ServerIconPath);
+                new Uri(ofd.FileName).LoadImage(64, 64).Save(server.IconPath);
                 reloadServerIcon();
             }
         }
 
         void reloadServerIcon()
         {
-            if (File.Exists(ServerIconPath))
-                icon.Source = new Uri(ServerIconPath).LoadImage();
+            if (File.Exists(server.IconPath))
+                icon.Source = new Uri(server.IconPath).LoadImage();
         }
 
         #endregion

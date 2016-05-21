@@ -106,7 +106,7 @@ namespace Minecraft_Server_Starter
         void upgradeServerClick(object sender, RoutedEventArgs e)
         {
             // check if running
-            if (CheckServerRunning()) // TODO WELL, USE DIFFERENT TEXT HAHA!
+            if (CheckServerRunning()) // TODO use a different text!
                 return;
 
             // else we can upgrde

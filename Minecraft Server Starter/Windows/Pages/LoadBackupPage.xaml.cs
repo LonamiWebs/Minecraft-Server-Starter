@@ -38,8 +38,7 @@ namespace Minecraft_Server_Starter
                 bWorlds.IsChecked.Value, bServerProperties.IsChecked.Value, bWhiteList.IsChecked.Value,
                 bOps.IsChecked.Value, bBanned.IsChecked.Value, bLogs.IsChecked.Value, bEverything.IsChecked.Value);
         }
-
-        // TODO we're here!!! :D
+        
         public void LoadBackup(Backup backup)
         {
             foreach (CheckBox checkBox in checkBoxes.Children)

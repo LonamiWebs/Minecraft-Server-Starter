@@ -376,8 +376,6 @@ namespace Minecraft_Server_Starter
 
         #endregion
 
-        // TODO UPDATE CODE SNIPPET WHEN DONE
-
         #region Text insertion and retrieval
 
         /// <summary>
@@ -482,7 +480,7 @@ namespace Minecraft_Server_Starter
 
             else if (characters.Count < maxLength)
             {
-                var exceeds = maxLength - characters.Count; // todo test, old used chars below instead haracters
+                var exceeds = maxLength - characters.Count; // TODO test this, old code used "chars" below instead "characters"
                 characters.RemoveRange(characters.Count - exceeds, exceeds);
             }
 

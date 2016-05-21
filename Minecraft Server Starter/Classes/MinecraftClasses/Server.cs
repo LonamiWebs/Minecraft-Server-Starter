@@ -60,7 +60,7 @@ namespace Minecraft_Server_Starter
         /// <summary>
         /// The server-icon.png path
         /// </summary>
-        public string IconPath => Path.Combine(Location, "server-icon.png"); // TODO USE EVERYWHERE
+        public string IconPath => Path.Combine(Location, "server-icon.png");
 
         /// <summary>
         /// The server.properties path
