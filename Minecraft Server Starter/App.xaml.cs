@@ -17,6 +17,44 @@ namespace Minecraft_Server_Starter
     {
         public App()
         {
+            SelectCulture(Thread.CurrentThread.CurrentCulture.ToString());
+
+            
+
+            
+
+            
+
+            
+
+            
+
+            
+
+            
+
+            
+
+            
+
+            
+
+            
+
+            
+
+            
+
+            
+
+            
+
+            
+
+            
+
+            
+
             InitializeComponent();
 
             SelectCulture(Thread.CurrentThread.CurrentUICulture.ToString());
@@ -65,6 +103,25 @@ namespace Minecraft_Server_Starter
         }
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

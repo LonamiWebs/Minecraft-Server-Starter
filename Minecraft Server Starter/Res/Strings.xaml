@@ -1,174 +1,58 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:system="clr-namespace:System;assembly=mscorlib">
-    <system:String x:Key="appTitle">Minecraft Server Stater</system:String>
-    <!-- Strings -->
-    <system:String x:Key="sServerName">Server name</system:String>
-    <system:String x:Key="sJarFile">.jar file</system:String>
-    <system:String x:Key="sDescription">Description</system:String>
-    <system:String x:Key="sEditServer">Edit server</system:String>
-    <system:String x:Key="sServers">Servers</system:String>
-    <system:String x:Key="sSettings">Settings</system:String>
-    <system:String x:Key="sOpenServer">Open server</system:String>
-    <system:String x:Key="sPlayers">Players</system:String>
-    <system:String x:Key="sWhisper">Whisper</system:String>
-    <system:String x:Key="sSaveWorlds">Save worlds</system:String>
-    <system:String x:Key="sCloseSaving">Close saving</system:String>
-    <system:String x:Key="sCloseNoSave">Close without saving</system:String>
-    <system:String x:Key="sForceClose">Force close</system:String>
-    <system:String x:Key="sKick">Kick</system:String>
-    <system:String x:Key="sCopyLog">Copy log</system:String>
-    <system:String x:Key="sSaveLog">Save log</system:String>
-    <system:String x:Key="sClearLog">Clear log</system:String>
-    <system:String x:Key="sMinMaxRAM">Minimum/maximum RAM for the server:</system:String>
-    <system:String x:Key="sMB">MB</system:String>
-    <system:String x:Key="sJavaPath">java.exe path:</system:String>
-    <system:String x:Key="sServerPriority">Server priority:</system:String>
-    <system:String x:Key="sNotifLoc">Notifications location</system:String>
-    <system:String x:Key="sTryIt">Try it!</system:String>
-    <system:String x:Key="sResetSettings">Reset settings</system:String>
-    <system:String x:Key="sAcceptAndClose">Accept and exit</system:String>
-    <system:String x:Key="sTestNotif">Testing notification</system:String>
-    <system:String x:Key="sPriorityHigh">High</system:String>
-    <system:String x:Key="sPriorityAboveNormal">Above normal</system:String>
-    <system:String x:Key="sPriorityNormal">Normal</system:String>
-    <system:String x:Key="sPriorityBelowNormal">Below normal</system:String>
-    <system:String x:Key="sPriorityLow">Low</system:String>
-    <system:String x:Key="sLocationTopLeft">Top left</system:String>
-    <system:String x:Key="sLocationTopRight">Top right</system:String>
-    <system:String x:Key="sLocationBottomLeft">Bottom left</system:String>
-    <system:String x:Key="sLocationBottomRight">Bottom right</system:String>
-    <system:String x:Key="sLocationTopMiddle">Top middle</system:String>
-    <system:String x:Key="sLocationBottomMiddle">Bottom middle</system:String>
-    <system:String x:Key="sLocationRightCenter">Right center</system:String>
-    <system:String x:Key="sLocationLeftCenter">Left center</system:String>
-    <system:String x:Key="sEditProperties">Edit server.properties</system:String>
-    <system:String x:Key="sCreationDate">Creation date:</system:String>
-    <system:String x:Key="sLastPlayed">Last played:</system:String>
-    <system:String x:Key="sIcon">Server icon</system:String>
-    <system:String x:Key="sChange">Change</system:String>
-    <system:String x:Key="sPropertiesEditor">.properties files editor</system:String>
-    <system:String x:Key="sCancel">Cancel</system:String>
-    <system:String x:Key="sSave">Save</system:String>
-    <system:String x:Key="sSearch">Search:</system:String>
-    <!-- Strings (code behind) -->
-    <system:String x:Key="sPlayerJoined">{0} joined</system:String>
-    <system:String x:Key="sPlayerLeft">{0} left</system:String>
-    <system:String x:Key="sPlayerJoinedFull">Player {0} joined the server</system:String>
-    <system:String x:Key="sPlayerLeftFull">Player {0} left the server</system:String>
-    <system:String x:Key="sCreatedThe">Created the {0}</system:String>
-    <system:String x:Key="sImageFilter">Image|*.png;*.jpg;*.jpeg;*.bmp;*.gif</system:String>
-    <system:String x:Key="sJarFileFilter">Jar file|*.jar</system:String>
-    <system:String x:Key="sTextFileFilter">Text file|*.txt</system:String>
-    <system:String x:Key="sServerRunning">: {0} running</system:String>
-    <!-- Strings (tooltips) -->
-    <system:String x:Key="stExecuteCommand">Execute command</system:String>
-    <system:String x:Key="stSendMessagePlayers">Send message to all players</system:String>
-    <system:String x:Key="stDeleteServer">Delete server</system:String>
-    <system:String x:Key="stEditServer">Edit server</system:String>
-    <system:String x:Key="stUpgradeServer">Upgrade server</system:String>
-    <system:String x:Key="stBackupServer">Backup server</system:String>
-    <system:String x:Key="stAddServer">Add a new server</system:String>
-    <system:String x:Key="stOpPlayer">Op player</system:String>
-    <system:String x:Key="stDeopPlayer">De-op player</system:String>
-    <system:String x:Key="stBanPlayer">Ban player</system:String>
-    <system:String x:Key="stPardonPlayer">Pardon (unban) player</system:String>
-    <system:String x:Key="stKickPlayer">Kick player</system:String>
-    <system:String x:Key="stWhisperPlayer">Send a private message to the player</system:String>
-    <!-- Strings (messagebox content / title) -->
-    <system:String x:Key="smcAgreeEula">By using this program you agree with Mojang's EULA: https://account.mojang.com/documents/Minecraft_eula</system:String>
-    <system:String x:Key="smtAgreeEula">EULA agreement</system:String>
-    <system:String x:Key="smcJavaNotFound">Java could not be found. Please, select the path of Java from settings before opening the server</system:String>
-    <system:String x:Key="smtJavaNotFound">Java was not found</system:String>
-    <system:String x:Key="smcServerBusy">The server is busy. Do you want to close it without saving?</system:String>
-    <system:String x:Key="smtServerBusy">Busy server</system:String>
-    <system:String x:Key="smcWorldUnsaved">The world hasn't been saved. Do you want to save it before closing?</system:String>
-    <system:String x:Key="smtWorldUnsaved">Unsaved world</system:String>
-    <system:String x:Key="smcCannotDeleteRunning">You cannot delete a running server. Close it and then try again</system:String>
-    <system:String x:Key="smtCannotDeleteRunning">Server is running</system:String>
-    <system:String x:Key="smcHighRAM">The chosen values for the RAM are higher than the {0} of total RAM. Do you wish to fix them automatically?</system:String>
-    <system:String x:Key="smtHighRAM">RAM values are too high</system:String>
-    <system:String x:Key="smcNotMultiple">Values which aren't multiple of {0} have been chosen for the RAM. Do you wish to fix them automatically?</system:String>
-    <system:String x:Key="smtNotMultiple">Awkward RAM values</system:String>
-    <system:String x:Key="smcResetSettings">The settings will be restarted.</system:String>
-    <system:String x:Key="smtResetSettings">Sure?</system:String>
-    <system:String x:Key="smcSettingsReset">The settings have ben restarted</system:String>
-    <system:String x:Key="smtSettingsReset">Done!</system:String>
-    <system:String x:Key="noDescriptionAvailable">No description available</system:String>
-    <system:String x:Key="descAllowFlight">Allows users to use flight on your server while in Survival mode, if they have a mod that provides flight installed.
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:system="clr-namespace:System;assembly=mscorlib"><system:String x:Key="appTitle">Minecraft Server Stater</system:String><!-- Strings --><system:String x:Key="sServerName">Server name</system:String><system:String x:Key="sJarFile">.jar file</system:String><system:String x:Key="sDescription">Description</system:String><system:String x:Key="sEditServer">Edit server</system:String><system:String x:Key="sServers">Servers</system:String><system:String x:Key="sSettings">Settings</system:String><system:String x:Key="sOpenServer">Open server</system:String><system:String x:Key="sPlayers">Players</system:String><system:String x:Key="sWhisper">Whisper</system:String><system:String x:Key="sSaveWorlds">Save worlds</system:String><system:String x:Key="sCloseSaving">Close saving</system:String><system:String x:Key="sCloseNoSave">Close without saving</system:String><system:String x:Key="sForceClose">Force close</system:String><system:String x:Key="sKick">Kick</system:String><system:String x:Key="sCopyLog">Copy log</system:String><system:String x:Key="sSaveLog">Save log</system:String><system:String x:Key="sClearLog">Clear log</system:String><system:String x:Key="sMinMaxRAM">Minimum/maximum RAM for the server:</system:String><system:String x:Key="sMB">MB</system:String><system:String x:Key="sJavaPath">java.exe path:</system:String><system:String x:Key="sServerPriority">Server priority:</system:String><system:String x:Key="sNotifLoc">Notifications location</system:String><system:String x:Key="sTryIt">Try it!</system:String><system:String x:Key="sResetSettings">Reset settings</system:String><system:String x:Key="sAcceptAndClose">Accept and exit</system:String><system:String x:Key="sTestNotif">Testing notification</system:String><system:String x:Key="sPriorityHigh">High</system:String><system:String x:Key="sPriorityAboveNormal">Above normal</system:String><system:String x:Key="sPriorityNormal">Normal</system:String><system:String x:Key="sPriorityBelowNormal">Below normal</system:String><system:String x:Key="sPriorityLow">Low</system:String><system:String x:Key="sLocationTopLeft">Top left</system:String><system:String x:Key="sLocationTopRight">Top right</system:String><system:String x:Key="sLocationBottomLeft">Bottom left</system:String><system:String x:Key="sLocationBottomRight">Bottom right</system:String><system:String x:Key="sLocationTopMiddle">Top middle</system:String><system:String x:Key="sLocationBottomMiddle">Bottom middle</system:String><system:String x:Key="sLocationRightCenter">Right center</system:String><system:String x:Key="sLocationLeftCenter">Left center</system:String><system:String x:Key="sEditProperties">Edit server.properties</system:String><system:String x:Key="sCreationDate">Creation date:</system:String><system:String x:Key="sLastPlayed">Last played:</system:String><system:String x:Key="sIcon">Server icon</system:String><system:String x:Key="sChange">Change</system:String><system:String x:Key="sPropertiesEditor">.properties files editor</system:String><system:String x:Key="sCancel">Cancel</system:String><system:String x:Key="sSave">Save</system:String><system:String x:Key="sSearch">Search:</system:String><!-- Strings (code behind) --><system:String x:Key="sPlayerJoined">{0} joined</system:String><system:String x:Key="sPlayerLeft">{0} left</system:String><system:String x:Key="sPlayerJoinedFull">Player {0} joined the server</system:String><system:String x:Key="sPlayerLeftFull">Player {0} left the server</system:String><system:String x:Key="sCreatedThe">Created the {0}</system:String><system:String x:Key="sImageFilter">Image|*.png;*.jpg;*.jpeg;*.bmp;*.gif</system:String><system:String x:Key="sJarFileFilter">Jar file|*.jar</system:String><system:String x:Key="sTextFileFilter">Text file|*.txt</system:String><system:String x:Key="sServerRunning">: {0} running</system:String><!-- Strings (tooltips) --><system:String x:Key="stExecuteCommand">Execute command</system:String><system:String x:Key="stSendMessagePlayers">Send message to all players</system:String><system:String x:Key="stDeleteServer">Delete server</system:String><system:String x:Key="stEditServer">Edit server</system:String><system:String x:Key="stUpgradeServer">Upgrade server</system:String><system:String x:Key="stBackupServer">Backup server</system:String><system:String x:Key="stAddServer">Add a new server</system:String><system:String x:Key="stOpPlayer">Op player</system:String><system:String x:Key="stDeopPlayer">De-op player</system:String><system:String x:Key="stBanPlayer">Ban player</system:String><system:String x:Key="stPardonPlayer">Pardon (unban) player</system:String><system:String x:Key="stKickPlayer">Kick player</system:String><system:String x:Key="stWhisperPlayer">Send a private message to the player</system:String><!-- Strings (messagebox content / title) --><system:String x:Key="smcAgreeEula">By using this program you agree with Mojang's EULA: https://account.mojang.com/documents/Minecraft_eula</system:String><system:String x:Key="smtAgreeEula">EULA agreement</system:String><system:String x:Key="smcJavaNotFound">Java could not be found. Please, select the path of Java from settings before opening the server</system:String><system:String x:Key="smtJavaNotFound">Java was not found</system:String><system:String x:Key="smcServerBusy">The server is busy. Do you want to close it without saving?</system:String><system:String x:Key="smtServerBusy">Busy server</system:String><system:String x:Key="smcWorldUnsaved">The world hasn't been saved. Do you want to save it before closing?</system:String><system:String x:Key="smtWorldUnsaved">Unsaved world</system:String><system:String x:Key="smcCannotPerformRunning">You cannot perform this operation on a running server. Close it and then try again</system:String><system:String x:Key="smtCannotPerformRunning">Server is running</system:String><system:String x:Key="smcHighRAM">The chosen values for the RAM are higher than the {0} of total RAM. Do you wish to fix them automatically?</system:String><system:String x:Key="smtHighRAM">RAM values are too high</system:String><system:String x:Key="smcNotMultiple">Values which aren't multiple of {0} have been chosen for the RAM. Do you wish to fix them automatically?</system:String><system:String x:Key="smtNotMultiple">Awkward RAM values</system:String><system:String x:Key="smcResetSettings">The settings will be restarted.</system:String><system:String x:Key="smtResetSettings">Sure?</system:String><system:String x:Key="smcSettingsReset">The settings have ben restarted</system:String><system:String x:Key="smtSettingsReset">Done!</system:String><system:String x:Key="noDescriptionAvailable">No description available</system:String><system:String x:Key="descAllowFlight">Allows users to use flight on your server while in Survival mode, if they have a mod that provides flight installed.
 
 With allow-flight enabled griefers will possibly be more common, because it will make their work easier. In Creative mode this has no effect.
 
 false - Flight is not allowed (players in air for at least 5 seconds will be kicked).
-true - Flight is allowed, and used if the player has a fly mod installed.</system:String>
-    <system:String x:Key="descAllowNether">Allows players to travel to the Nether.
+true - Flight is allowed, and used if the player has a fly mod installed.</system:String><system:String x:Key="descAllowNether">Allows players to travel to the Nether.
 
 false - Nether portals will not work.
-true - The server will allow portals to send players to the Nether.</system:String>
-    <system:String x:Key="descAnnounceAchievements">Allows server to announce when a player gets an achievement.</system:String>
-    <system:String x:Key="descDifficulty">Defines the difficulty (such as damage dealt by mobs and the way hunger and poison affects players) of the server.
+true - The server will allow portals to send players to the Nether.</system:String><system:String x:Key="descAnnounceAchievements">Allows server to announce when a player gets an achievement.</system:String><system:String x:Key="descDifficulty">Defines the difficulty (such as damage dealt by mobs and the way hunger and poison affects players) of the server.
 
 0 - Peaceful
 1 - Easy
 2 - Normal
-3 - Hard</system:String>
-    <system:String x:Key="descEnableQuery">Enables GameSpy4 protocol server listener. Used to get information about server.</system:String>
-    <system:String x:Key="descEnableRcon">Enables remote access to the server console.</system:String>
-    <system:String x:Key="descEnableCommandBlock">Enables command blocks.</system:String>
-    <system:String x:Key="descForceGamemode">Force players to join in the default game mode.
+3 - Hard</system:String><system:String x:Key="descEnableQuery">Enables GameSpy4 protocol server listener. Used to get information about server.</system:String><system:String x:Key="descEnableRcon">Enables remote access to the server console.</system:String><system:String x:Key="descEnableCommandBlock">Enables command blocks.</system:String><system:String x:Key="descForceGamemode">Force players to join in the default game mode.
 
 false - Players will join in the gamemode they left in.
-true - Players will always join in the default gamemode.</system:String>
-    <system:String x:Key="descGamemode">Defines the mode of gameplay.
+true - Players will always join in the default gamemode.</system:String><system:String x:Key="descGamemode">Defines the mode of gameplay.
 
 0 - Survival
 1 - Creative
 2 - Adventure
-3 - Spectator</system:String>
-    <system:String x:Key="descGenerateStructures">Defines whether structures (such as villages) will be generated.
+3 - Spectator</system:String><system:String x:Key="descGenerateStructures">Defines whether structures (such as villages) will be generated.
 
 false - Structures will not be generated in new chunks.
 true - Structures will be generated in new chunks.
 
-Note: Dungeons will still generate if this is set to false.</system:String>
-    <system:String x:Key="descGeneratorSettings">The settings used to customize world generation. See Superflat and Customized for possible settings and examples.</system:String>
-    <system:String x:Key="descHardcore">If set to true, players will be permanently banned if they die.</system:String>
-    <system:String x:Key="descLevelName">The "level-name" value will be used as the world name and its folder name.
+Note: Dungeons will still generate if this is set to false.</system:String><system:String x:Key="descGeneratorSettings">The settings used to customize world generation. See Superflat and Customized for possible settings and examples.</system:String><system:String x:Key="descHardcore">If set to true, players will be permanently banned if they die.</system:String><system:String x:Key="descLevelName">The "level-name" value will be used as the world name and its folder name.
 You may also copy your saved game folder here, and change the name to the same as that folder's to load it instead.
 
-Characters such as ' (apostrophe) may need to be escaped by adding a backslash before them.</system:String>
-    <system:String x:Key="descLevelSeed">Add a seed for your world, as in Singleplayer.
+Characters such as ' (apostrophe) may need to be escaped by adding a backslash before them.</system:String><system:String x:Key="descLevelSeed">Add a seed for your world, as in Singleplayer.
 
-Some examples are: Minecraft, 404, 1a2b3c.</system:String>
-    <system:String x:Key="descLevelType">Determines the type of map that is generated.
+Some examples are: Minecraft, 404, 1a2b3c.</system:String><system:String x:Key="descLevelType">Determines the type of map that is generated.
 
 DEFAULT - Standard world with hills, valleys, water, etc.
 FLAT - A flat world with no features, meant for building.
 LARGEBIOMES - Same as default but all biomes are larger.
 AMPLIFIED - Same as default but world-generation height limit is increased.
-CUSTOMIZED - Same as default unless generator-settings is set to a preset.</system:String>
-    <system:String x:Key="descMaxBuildHeight">The maximum height in which building is allowed. Terrain may still naturally generate above a low height limit.</system:String>
-    <system:String x:Key="descMaxPlayers">The maximum number of players that can play on the server at the same time. Note that if more players are on the server it will use more resources.
+CUSTOMIZED - Same as default unless generator-settings is set to a preset.</system:String><system:String x:Key="descMaxBuildHeight">The maximum height in which building is allowed. Terrain may still naturally generate above a low height limit.</system:String><system:String x:Key="descMaxPlayers">The maximum number of players that can play on the server at the same time. Note that if more players are on the server it will use more resources.
 Note also, op player connections are not supposed to count against the max players, but ops currently cannot join a full server.
-Extremely large values for this field result in the client-side user list being broken.</system:String>
-    <system:String x:Key="descMaxTickTime">The maximum number of milliseconds a single tick may take before the server watchdog stops the server with the message,
+Extremely large values for this field result in the client-side user list being broken.</system:String><system:String x:Key="descMaxTickTime">The maximum number of milliseconds a single tick may take before the server watchdog stops the server with the message,
 A single server tick took 60.00 seconds (should be max 0.05); Considering it to be crashed, server will forcibly shutdown.
 Once this criteria is met, it calls System.exit(1).
 
--1 - disable watchdog entirely (this disable option was added in 14w32a)</system:String>
-    <system:String x:Key="descMaxWorldSize">This sets the maximum possible size in blocks, expressed as a radius, that the world border can obtain.
+-1 - disable watchdog entirely (this disable option was added in 14w32a)</system:String><system:String x:Key="descMaxWorldSize">This sets the maximum possible size in blocks, expressed as a radius, that the world border can obtain.
 Setting the world border bigger causes the commands to complete successfully but the actual border will not move past this block limit.
 Setting the max-world-size higher than the default doesn't appear to do anything.
 
 Examples:
 
 Setting max-world-size to 1000 will allow you to have a 2000x2000 world border.
-Setting max-world-size to 4000 will give you an 8000 x 8000 world border.</system:String>
-    <system:String x:Key="descMotd">This is the message that is displayed in the server list of the client, below the name.
+Setting max-world-size to 4000 will give you an 8000 x 8000 world border.</system:String><system:String x:Key="descMotd">This is the message that is displayed in the server list of the client, below the name.
 
 The MOTD does support color and formatting codes.
 The MOTD supports special characters, such as "♥". However, such characters must be converted to escaped Unicode form. An online converter can be found here
-If the MOTD is over 59 characters, the server list will likely report a communication error.</system:String>
-    <system:String x:Key="descNetworkCompression">By default it allows packets that are n-1 bytes big to go normally, but a packet that n bytes
+If the MOTD is over 59 characters, the server list will likely report a communication error.</system:String><system:String x:Key="descNetworkCompression">By default it allows packets that are n-1 bytes big to go normally, but a packet that n bytes
 or more will be compressed down. So, lower number means more compression but compressing small amounts of bytes might actually end
 up with a larger result than what went in.
 
@@ -176,21 +60,18 @@ up with a larger result than what went in.
 0 - compress everything
 
 Note: The Ethernet spec requires that packets less than 64 bytes become padded to 64 bytes. Thus, setting a value lower than 64 may not be beneficial.
-It is also not recommended to exceed the MTU, typically 1500 bytes.</system:String>
-    <system:String x:Key="descOnlineMode">Server checks connecting players against Minecraft's account database. Only set this to false if your server is not connected to the Internet.
+It is also not recommended to exceed the MTU, typically 1500 bytes.</system:String><system:String x:Key="descOnlineMode">Server checks connecting players against Minecraft's account database. Only set this to false if your server is not connected to the Internet.
 Hackers with fake accounts can connect if this is set to false! If Minecraft.net is down or inaccessible, no players will be able to connect if this is set to true.
 Setting this variable to off purposely is called "cracking" a server, and servers that are presently with online mode off are called "cracked" servers,
 allowing players with unlicensed copies of Minecraft to join.
 
 true - Enabled. The server will assume it has an Internet connection and check every connecting player.
-false - Disabled. The server will not attempt to check connecting players.</system:String>
-    <system:String x:Key="descOpPermissionLevel">Sets permission level for ops.
+false - Disabled. The server will not attempt to check connecting players.</system:String><system:String x:Key="descOpPermissionLevel">Sets permission level for ops.
 
 1 - Ops can bypass spawn protection.
 2 - Ops can use /clear, /difficulty, /effect, /gamemode, /gamerule, /give, and /tp, and can edit command blocks.
 3 - Ops can use /ban, /deop, /kick, and /op.
-4 - Ops can use /stop.</system:String>
-    <system:String x:Key="descPlayerIdleTimeout">If non-zero, players are kicked from the server if they are idle for more than that many minutes.
+4 - Ops can use /stop.</system:String><system:String x:Key="descPlayerIdleTimeout">If non-zero, players are kicked from the server if they are idle for more than that many minutes.
 
 Note: Idle time is reset when the server receives one of the following packets:
 
@@ -204,58 +85,42 @@ Note: Idle time is reset when the server receives one of the following packets:
 19 (0x13) EntityAction
 205 (0xcd) ClientCommand
 3 (0x3) Chat
-7 (0x7) UseEntity</system:String>
-    <system:String x:Key="descPvp">Enable PvP on the server. Players shooting themselves with arrows will only receive damage if PvP is enabled.
+7 (0x7) UseEntity</system:String><system:String x:Key="descPvp">Enable PvP on the server. Players shooting themselves with arrows will only receive damage if PvP is enabled.
 
 true - Players will be able to kill each other.
 false - Players cannot kill other players (also known as Player versus Environment (PvE)).
 
-Note: Indirect damage sources spawned by players (such as lava, fire, TNT and to some extent water, sand and gravel) will still deal damage to other players.</system:String>
-    <system:String x:Key="descQueryPort">Sets the port for the query server (see enable-query).</system:String>
-    <system:String x:Key="descRconPassword">Sets the password to rcon.</system:String>
-    <system:String x:Key="descRconPort">Sets the port to rcon.</system:String>
-    <system:String x:Key="descResourcePack">Optional URI to a resource pack. The player may choose to use it.</system:String>
-    <system:String x:Key="descResourcePackHash">Optional SHA-1 digest of the resource pack, in lowercase hexadecimal. It's recommended to specify this.
-This is not yet used to verify the integrity of the resource pack, but improves the effectiveness and reliability of caching.</system:String>
-    <system:String x:Key="descServerIp">Set this if you want the server to bind to a particular IP. It is strongly recommended that you leave server-ip blank!
+Note: Indirect damage sources spawned by players (such as lava, fire, TNT and to some extent water, sand and gravel) will still deal damage to other players.</system:String><system:String x:Key="descQueryPort">Sets the port for the query server (see enable-query).</system:String><system:String x:Key="descRconPassword">Sets the password to rcon.</system:String><system:String x:Key="descRconPort">Sets the port to rcon.</system:String><system:String x:Key="descResourcePack">Optional URI to a resource pack. The player may choose to use it.</system:String><system:String x:Key="descResourcePackHash">Optional SHA-1 digest of the resource pack, in lowercase hexadecimal. It's recommended to specify this.
+This is not yet used to verify the integrity of the resource pack, but improves the effectiveness and reliability of caching.</system:String><system:String x:Key="descServerIp">Set this if you want the server to bind to a particular IP. It is strongly recommended that you leave server-ip blank!
 
-Set to blank, or the IP you want your server to run (listen) on.</system:String>
-    <system:String x:Key="descServerPort">Changes the port the server is hosting (listening) on. This port must be forwarded if the server is hosted in a network using
-NAT (If you have a home router/firewall).</system:String>
-    <system:String x:Key="descSnooper">Sets whether the server sends snoop data regularly to http://snoop.Minecraft.net.
+Set to blank, or the IP you want your server to run (listen) on.</system:String><system:String x:Key="descServerPort">Changes the port the server is hosting (listening) on. This port must be forwarded if the server is hosted in a network using
+NAT (If you have a home router/firewall).</system:String><system:String x:Key="descSnooper">Sets whether the server sends snoop data regularly to http://snoop.Minecraft.net.
 
 false - disable snooping.
-true - enable snooping.</system:String>
-    <system:String x:Key="descSpawnAnimals">Determines if animals will be able to spawn.
+true - enable snooping.</system:String><system:String x:Key="descSpawnAnimals">Determines if animals will be able to spawn.
 
 true - Animals spawn as normal.
 false - Animals will immediately vanish.
 
-Tip: if you have major lag, turn this off/set to false.</system:String>
-    <system:String x:Key="descSpawnMonsters">Determines if monsters will be spawned.
+Tip: if you have major lag, turn this off/set to false.</system:String><system:String x:Key="descSpawnMonsters">Determines if monsters will be spawned.
 
 true - Enabled.Monsters will appear at night and in the dark.
 false - Disabled.No monsters.
 
 This does nothing if difficulty = 0 (peaceful) Unless your difficulty is not set to 0, when a monster can still spawn from a Monster Spawner.
-Tip: if you have major lag, turn this off/set to false.</system:String>
-    <system:String x:Key="descSpawnNpcs">Determines if villagers will be spawned.
+Tip: if you have major lag, turn this off/set to false.</system:String><system:String x:Key="descSpawnNpcs">Determines if villagers will be spawned.
 
 true - Enabled. Villagers will spawn.
-false - Disabled. No villagers.</system:String>
-    <system:String x:Key="descSpawnProtection">Determines the radius of the spawn protection.Setting this to 0 will not disable spawn protection. 0 will protect the single block at the spawn point.
+false - Disabled. No villagers.</system:String><system:String x:Key="descSpawnProtection">Determines the radius of the spawn protection.Setting this to 0 will not disable spawn protection. 0 will protect the single block at the spawn point.
 1 will protect a 3x3 area centered on the spawn point. 2 will protect 5x5, 3 will protect 7x7, etc.
 This option is not generated on the first server start and appears when the first player joins. If there are no ops set on the server,
-the spawn protection will be disabled automatically.</system:String>
-    <system:String x:Key="descUseNativeSupport">Linux server performance improvements: optimized packet sending/receiving on Linux
+the spawn protection will be disabled automatically.</system:String><system:String x:Key="descUseNativeSupport">Linux server performance improvements: optimized packet sending/receiving on Linux
 
 true - Enabled. Enable Linux packet sending/receiving optimization
-false - Disabled. Disable Linux packet sending/receiving optimization</system:String>
-    <system:String x:Key="descViewDistance">Sets the amount of world data the server sends the client, measured in chunks in each direction of the player (radius, not diameter).
+false - Disabled. Disable Linux packet sending/receiving optimization</system:String><system:String x:Key="descViewDistance">Sets the amount of world data the server sends the client, measured in chunks in each direction of the player (radius, not diameter).
 It determines the server-side viewing distance. (see Render distance)
 
-10 is the default/recommended. If you have major lag, reduce this value.</system:String>
-    <system:String x:Key="descWhiteList">Enables a whitelist on the server.
+10 is the default/recommended. If you have major lag, reduce this value.</system:String><system:String x:Key="descWhiteList">Enables a whitelist on the server.
 
 With a whitelist enabled, users not on the whitelist will be unable to connect. Intended for private servers, such as those for real-life friends
 or strangers carefully selected via an application process, for example.
@@ -263,7 +128,4 @@ or strangers carefully selected via an application process, for example.
 false - No white list is used.
 true - The file whitelist.json is used to generate the white list.
 
-Note: Ops are automatically white listed, and there is no need to add them to the whitelist.</system:String>
-    <system:String x:Key="initializingServer">Initializing server...</system:String>
-    <system:String x:Key="serverHasClosed">Server has been closed</system:String>
-</ResourceDictionary>
+Note: Ops are automatically white listed, and there is no need to add them to the whitelist.</system:String><system:String x:Key="initializingServer">Initializing server...</system:String><system:String x:Key="serverHasClosed">Server has been closed</system:String><system:String x:Key="addServer">Add server</system:String><system:String x:Key="configuration">Configuration</system:String><system:String x:Key="serverName">Server's name:</system:String><system:String x:Key="autoJarDownload">Download .jar automatically</system:String><system:String x:Key="showOnlyReleases">Show only releases</system:String><system:String x:Key="useCustomJar">Use a custom .jar file</system:String><system:String x:Key="updatingTripleDot">Updating...</system:String><system:String x:Key="optionalDescription">Description (optional)</system:String><system:String x:Key="sAccept">Accept</system:String><system:String x:Key="properties">Properties</system:String><system:String x:Key="changeIcon">Change icon</system:String><system:String x:Key="difficultyColon">Difficulty: </system:String><system:String x:Key="gamemodeColon">Game mode: </system:String><system:String x:Key="maxPlayersColon">Maximum players: </system:String><system:String x:Key="hardcore">Hardcore</system:String><system:String x:Key="onlineMode">Online mode</system:String><system:String x:Key="enableCommandBlock">Enable command block</system:String><system:String x:Key="finalResult">Final result:</system:String><system:String x:Key="svPropertiesCode">server.properties MOTD code:</system:String><system:String x:Key="copy">Copy</system:String><system:String x:Key="whatToDo">What do you want to do?</system:String><system:String x:Key="generateBackup">Generate backup</system:String><system:String x:Key="loadBackup">Load backup</system:String><system:String x:Key="manageBackups">Manage backups</system:String><system:String x:Key="whatToDoServer">What do you wish doing with the following server?:</system:String><system:String x:Key="cancelOperation">Cancel operation</system:String><system:String x:Key="deleteOnlyList">Delete server from list only</system:String><system:String x:Key="backupAndDelete">Backup and delete server</system:String><system:String x:Key="hoverForInfo">Hover a button to see a more detailed description</system:String><system:String x:Key="thisString">this</system:String><system:String x:Key="folderString">folder</system:String><system:String x:Key="backupThenDelete">A backup of everything will be performed for this server, and it will be deleted afterwards</system:String><system:String x:Key="onlyDelete">The server will be deleted without performing any previous backup and everything will be deleted from disk</system:String><system:String x:Key="deleteOperationCancelled">The operation will be cancelled and the server will remain intact</system:String><system:String x:Key="performingOperations">Performing operations. Please wait</system:String></ResourceDictionary>

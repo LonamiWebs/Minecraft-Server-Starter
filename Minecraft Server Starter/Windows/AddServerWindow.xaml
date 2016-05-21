@@ -5,11 +5,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Minecraft_Server_Starter"
         mc:Ignorable="d"
-        Title="Añadir servidor" SizeToContent="WidthAndHeight" ResizeMode="NoResize" FontSize="14" Loaded="Window_Loaded" MaxWidth="600" Height="Auto">
+        Title="{StaticResource addServer}" SizeToContent="WidthAndHeight" ResizeMode="NoResize" FontSize="14" Loaded="Window_Loaded" MaxWidth="600" Height="Auto">
 
     <StackPanel>
         <TabControl Margin="4">
-            <TabItem Header="Configuración">
+            <TabItem Header="{StaticResource configuration}">
                 <StackPanel>
                     <Grid>
                         <Grid.ColumnDefinitions>
@@ -17,17 +17,17 @@
                             <ColumnDefinition Width="*" />
                         </Grid.ColumnDefinitions>
 
-                        <TextBlock Grid.Column="0" Text="Nombre del servidor" Margin="4" Height="24" />
+                        <TextBlock Grid.Column="0" Text="{StaticResource serverName}" Margin="4" Height="24" />
                         <TextBox Grid.Column="1" x:Name="name" Margin="4" Height="24" TextChanged="nameChanged" />
                     </Grid>
 
                     <local:SelectJarPage x:Name="selectJarPage" NameUpdateRequest="selectJarPageNameUpdateRequest" />
 
-                    <TextBlock Text="Descripción (opcional)" Margin="4" />
+                    <TextBlock Text="{StaticResource optionalDescription}" Margin="4" />
                     <TextBox x:Name="description" AcceptsReturn="True" Height="72" Margin="4" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto" />
                 </StackPanel>
             </TabItem>
-            <TabItem Header="Propiedades">
+            <TabItem Header="{StaticResource properties}">
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto" />
@@ -42,7 +42,7 @@
 
                         <StackPanel Grid.Column="0">
                             <Image x:Name="serverIcon" Width="64" Height="64" Margin="4" />
-                            <Button Content="Change icon" Style="{StaticResource PlainButton}" Margin="4,0" Click="changeIcon_Click" />
+                            <Button Content="{StaticResource changeIcon}" Style="{StaticResource PlainButton}" Margin="4,0" Click="changeIcon_Click" />
                         </StackPanel>
 
                         <StackPanel Grid.Column="1" Margin="4">
@@ -52,7 +52,7 @@
                                     <ColumnDefinition Width="*" />
                                 </Grid.ColumnDefinitions>
 
-                                <TextBlock Grid.Column="0" Text="Difficulty: " VerticalAlignment="Center" />
+                                <TextBlock Grid.Column="0" Text="{StaticResource difficultyColon}" VerticalAlignment="Center" Margin="0,0,4,0" />
                                 <ComboBox x:Name="difficultyComboBox" Grid.Column="1" SelectedIndex="2">
                                     <ComboBox.Items>
                                         <ComboBoxItem Content="Peaceful" />
@@ -68,7 +68,7 @@
                                     <ColumnDefinition Width="*" />
                                 </Grid.ColumnDefinitions>
 
-                                <TextBlock Grid.Column="0" Text="Game mode: " VerticalAlignment="Center" />
+                                <TextBlock Grid.Column="0" Text="{StaticResource gamemodeColon}" VerticalAlignment="Center" Margin="0,0,4,0" />
                                 <ComboBox x:Name="gameModeComboBox" Grid.Column="1" SelectedIndex="0">
                                     <ComboBox.Items>
                                         <ComboBoxItem Content="Survival" />
@@ -84,15 +84,15 @@
                                     <ColumnDefinition Width="*" />
                                 </Grid.ColumnDefinitions>
 
-                                <TextBlock Grid.Column="0" Text="Maximum players: " />
+                                <TextBlock Grid.Column="0" Text="{StaticResource maxPlayersColon}" Margin="0,0,4,0" />
                                 <TextBox x:Name="maxPlayersTextBox" Grid.Column="1" Width="64" Text="20" />
                             </Grid>
 
                         </StackPanel>
                         <StackPanel Grid.Column="2" Margin="4">
-                            <CheckBox x:Name="hardcoreCheckBox" Content="Hardcore" Margin="4" Height="24" VerticalContentAlignment="Center" />
-                            <CheckBox x:Name="onlineModeCheckBox" Content="Online mode" Margin="4" Height="24" VerticalContentAlignment="Center" IsChecked="True" />
-                            <CheckBox x:Name="enableCommandBlockCheckBox" Content="Enable command block" Margin="4" Height="24" VerticalContentAlignment="Center" />
+                            <CheckBox x:Name="hardcoreCheckBox" Content="{StaticResource hardcore}" Margin="4" Height="24" VerticalContentAlignment="Center" />
+                            <CheckBox x:Name="onlineModeCheckBox" Content="{StaticResource onlineMode}" Margin="4" Height="24" VerticalContentAlignment="Center" IsChecked="True" />
+                            <CheckBox x:Name="enableCommandBlockCheckBox" Content="{StaticResource enableCommandBlock}" Margin="4" Height="24" VerticalContentAlignment="Center" />
                         </StackPanel>
                     </Grid>
                     <local:MOTDTextBox x:Name="motdBox" TextChanged="motdChanged"  Grid.Row="1" />
@@ -105,8 +105,8 @@
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
 
-            <Button Grid.Column="0" Content="Cancelar" Height="32" Style="{StaticResource PlainButton}" Margin="4" Click="cancelClick" />
-            <Button Grid.Column="1" x:Name="accept" Content="Aceptar" Height="32" IsEnabled="False" Style="{StaticResource PlainButton}" Margin="4" Click="acceptClick"/>
+            <Button Grid.Column="0" Content="{StaticResource sCancel}" Height="32" Style="{StaticResource PlainButton}" Margin="4" Click="cancelClick" />
+            <Button Grid.Column="1" x:Name="accept" Content="{StaticResource sAccept}" Height="32" IsEnabled="False" Style="{StaticResource PlainButton}" Margin="4" Click="acceptClick"/>
         </Grid>
     </StackPanel>
 </Window>

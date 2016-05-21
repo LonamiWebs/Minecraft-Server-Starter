@@ -11,10 +11,10 @@
             </Grid.ColumnDefinitions>
 
             <StackPanel Grid.Column="0">
-                <RadioButton x:Name="jarAutoSelection" Content="Descargar .jar automáticamente" Margin="4" IsChecked="True" VerticalContentAlignment="Center" Height="24" Checked="autoJarChecked" />
-                <CheckBox x:Name="onlyReleasesCheckBox" Content="Mostrar sólo releases" IsChecked="True" Margin="16,0,0,0" VerticalContentAlignment="Center" Height="16" Checked="onlyReleasesChanged" Unchecked="onlyReleasesChanged" />
+                <RadioButton x:Name="jarAutoSelection" Content="{StaticResource autoJarDownload}" Margin="4" IsChecked="True" VerticalContentAlignment="Center" Height="24" Checked="autoJarChecked" />
+                <CheckBox x:Name="onlyReleasesCheckBox" Content="{StaticResource showOnlyReleases}" IsChecked="True" Margin="16,0,0,0" VerticalContentAlignment="Center" Height="16" Checked="onlyReleasesChanged" Unchecked="onlyReleasesChanged" />
             </StackPanel>
-            <ComboBox Grid.Column="1" x:Name="versionList" Margin="4,4,4,20" Height="24" IsEditable="True" Text="Actualizando..." />
+            <ComboBox Grid.Column="1" x:Name="versionList" Margin="4,4,4,20" Height="24" IsEditable="True" Text="{StaticResource updatingTripleDot}" />
         </Grid>
 
         <Grid>
@@ -22,7 +22,7 @@
                 <ColumnDefinition Width="Auto" />
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
-            <RadioButton Grid.Column="0" x:Name="jarCustomSelection" Content="Usar archivo .jar personalizado" Margin="4" VerticalContentAlignment="Center" Height="24" Checked="customJarChecked" />
+            <RadioButton Grid.Column="0" x:Name="jarCustomSelection" Content="{StaticResource useCustomJar}" Margin="4" VerticalContentAlignment="Center" Height="24" Checked="customJarChecked" />
             <Grid Grid.Column="1">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*" />

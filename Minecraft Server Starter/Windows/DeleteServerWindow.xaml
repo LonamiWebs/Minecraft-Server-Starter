@@ -4,11 +4,11 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Minecraft_Server_Starter"
-        Title="Delete server" SizeToContent="Height" Width="400" Closing="windowClosing">
+        Title="{StaticResource stDeleteServer}" SizeToContent="Height" Width="400" Closing="windowClosing">
     <StackPanel Margin="4">
         <!-- title -->
         <TextBlock>
-            <Run>What do you wish doing with the following server?:</Run>
+            <Run Text="{StaticResource whatToDoServer}" />
             <Run x:Name="serverName" />
         </TextBlock>
         <!-- options -->
@@ -22,24 +22,24 @@
                 <RowDefinition Height="*" />
             </Grid.RowDefinitions>
 
-            <Button Grid.Column="0" Grid.Row="0" Margin="4" Content="Cancel operation" Style="{StaticResource PlainButton}" MouseEnter="cancelHover" Click="cancelClick" />
-            <Button Grid.Column="1" Grid.Row="0" Margin="4" Content="Delete server" Style="{StaticResource PlainButton}" MouseEnter="deleteServerHover" Click="deleteClick" />
-            <Button Grid.Column="0" Grid.Row="1" Margin="4" Content="Delete server from list only" Style="{StaticResource PlainButton}" MouseEnter="deleteFromListHover" Click="deleteFromListClick" />
-            <Button Grid.Column="1" Grid.Row="1" Margin="4" Content="Backup and delete server" Style="{StaticResource PlainButton}" MouseEnter="backupDeleteServerHover" Click="backupDeleteClick" />
+            <Button Grid.Column="0" Grid.Row="0" Margin="4" Content="{StaticResource cancelOperation}" Style="{StaticResource PlainButton}" MouseEnter="cancelHover" Click="cancelClick" />
+            <Button Grid.Column="1" Grid.Row="0" Margin="4" Content="{StaticResource stDeleteServer}" Style="{StaticResource PlainButton}" MouseEnter="deleteServerHover" Click="deleteClick" />
+            <Button Grid.Column="0" Grid.Row="1" Margin="4" Content="{StaticResource deleteOnlyList}" Style="{StaticResource PlainButton}" MouseEnter="deleteFromListHover" Click="deleteFromListClick" />
+            <Button Grid.Column="1" Grid.Row="1" Margin="4" Content="{StaticResource backupAndDelete}" Style="{StaticResource PlainButton}" MouseEnter="backupDeleteServerHover" Click="backupDeleteClick" />
         </Grid>
 
         <!-- information textboxes -->
         <Grid x:Name="infos">
-            <TextBlock TextWrapping="Wrap">Hover a button to see a more detailed description</TextBlock>
+            <TextBlock TextWrapping="Wrap" Text="{StaticResource hoverForInfo}" />
             <TextBlock x:Name="infoDeleteFromListOnly" Visibility="Collapsed" TextWrapping="Wrap">
-                <Run Text="The server will only be removed from the servers list, and everything else will remain in" />
-                <Hyperlink Click="serverLocationLinkClick"><TextBlock Text="this" /></Hyperlink>
-                <Run Text="folder" />
+                <Run Text="{StaticResource serverOnlyList}" />
+                <Hyperlink Click="serverLocationLinkClick"><TextBlock Text="{StaticResource thisString}" /></Hyperlink>
+                <Run Text="{StaticResource folderString}" />
             </TextBlock>
-            <TextBlock x:Name="infoBackupDelete" TextWrapping="Wrap" Visibility="Collapsed">A backup of everything will be performed for this server, and it will be deleted afterwards</TextBlock>
-            <TextBlock x:Name="infoDelete" TextWrapping="Wrap" Visibility="Collapsed">The server will be deleted without performing any previous backup and everything will be deleted from disk</TextBlock>
-            <TextBlock x:Name="infoCancel" TextWrapping="Wrap" Visibility="Collapsed">The operation will be cancelled and the server will remain intact</TextBlock>
-            <TextBlock x:Name="infoPerforming" TextWrapping="Wrap" Visibility="Collapsed">Performing operations. Please wait</TextBlock>
+            <TextBlock x:Name="infoBackupDelete" TextWrapping="Wrap" Visibility="Collapsed" Text="{StaticResource backupThenDelete}" />
+            <TextBlock x:Name="infoDelete" TextWrapping="Wrap" Visibility="Collapsed" Text="{StaticResource onlyDelete}" />
+            <TextBlock x:Name="infoCancel" TextWrapping="Wrap" Visibility="Collapsed" Text="{StaticResource deleteOperationCancelled}" />
+            <TextBlock x:Name="infoPerforming" TextWrapping="Wrap" Visibility="Collapsed" Text="{StaticResource performingOperations}" />
         </Grid>
     </StackPanel>
 </Window>

@@ -81,8 +81,8 @@
     <system:String x:Key="smtServerBusy">Servidor ocupado</system:String>
     <system:String x:Key="smcWorldUnsaved">El mundo no se ha guardado. ¿Desea guardarlo antes de salir?</system:String>
     <system:String x:Key="smtWorldUnsaved">Mundo sin guardar</system:String>
-    <system:String x:Key="smcCannotDeleteRunning">No se puede eliminar un servidor en ejecución. Ciérrelo e inténtelo de nuevo</system:String>
-    <system:String x:Key="smtCannotDeleteRunning">Servidor abierto</system:String>
+    <system:String x:Key="smcCannotPerformRunning">No se puede ejecutar esta acción en un servidor en ejecución. Ciérrelo e inténtelo de nuevo</system:String>
+    <system:String x:Key="smtCannotPerformRunning">Servidor abierto</system:String>
     <system:String x:Key="smcHighRAM">Los valores elegidos para la RAM son superiores al {0} de la RAM total. ¿Desea reajustarlos automáticamente?</system:String>
     <system:String x:Key="smtHighRAM">Valores para la RAM muy altos</system:String>
     <system:String x:Key="smcNotMultiple">Se han elegido valores que no son múltiples de {0} para la RAM. ¿Desea reajustarlos automáticamente?</system:String>

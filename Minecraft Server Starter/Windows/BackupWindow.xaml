@@ -14,11 +14,11 @@
         </Grid.RowDefinitions>
         <!-- title -->
         <StackPanel Grid.Row="0" Margin="4">
-            <TextBlock Text="What do you want to do?" />
+            <TextBlock Text="{StaticResource whatToDo}" />
             <StackPanel Orientation="Horizontal">
-                <RadioButton Content="Generate backup" Margin="4" Checked="generateBackupChecked" />
-                <RadioButton Content="Load backup" Margin="4" Checked="loadBackupChecked" />
-                <RadioButton Content="Manage backups" Margin="4" Checked="manageBackupsChecked" />
+                <RadioButton Content="{StaticResource generateBackup}" Margin="4" Checked="generateBackupChecked" />
+                <RadioButton Content="{StaticResource loadBackup}" Margin="4" Checked="loadBackupChecked" />
+                <RadioButton Content="{StaticResource manageBackups}" Margin="4" Checked="manageBackupsChecked" />
             </StackPanel>
             <Separator />
         </StackPanel>

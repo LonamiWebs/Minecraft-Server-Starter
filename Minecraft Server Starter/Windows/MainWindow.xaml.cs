@@ -120,8 +120,8 @@ namespace Minecraft_Server_Starter
             if (ms != null && (server == ms.Server) &&
                 currentStatus != Status.Closed)
             {
-                MessageBox.Show(Res.GetStr("smcCannotDeleteRunning"),
-                    Res.GetStr("smcCannotDeleteRunning"), MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show(Res.GetStr("smcCannotPerformRunning"),
+                    Res.GetStr("smcCannotPerformRunning"), MessageBoxButton.OK, MessageBoxImage.Error);
 
                 return true;
             }
