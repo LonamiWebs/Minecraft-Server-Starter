@@ -32,7 +32,7 @@
         <Grid x:Name="infos">
             <TextBlock TextWrapping="Wrap" Text="{StaticResource hoverForInfo}" />
             <TextBlock x:Name="infoDeleteFromListOnly" Visibility="Collapsed" TextWrapping="Wrap">
-                <Run Text="{StaticResource serverOnlyList}" />
+                <Run Text="{StaticResource deleteOnlyList}" />
                 <Hyperlink Click="serverLocationLinkClick"><TextBlock Text="{StaticResource thisString}" /></Hyperlink>
                 <Run Text="{StaticResource folderString}" />
             </TextBlock>
