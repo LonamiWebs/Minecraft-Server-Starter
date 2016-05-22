@@ -6,19 +6,19 @@
       xmlns:local="clr-namespace:Minecraft_Server_Starter">
     <StackPanel>
         <!-- title -->
-        <TextBlock Margin="4" Text="Generate a new backup" />
+        <TextBlock Margin="4" Text="{StaticResource generateNewBackup}" />
         <!-- info -->
-        <TextBlock Margin="4" Text="Please select all the options you want to backup:" />
+        <TextBlock Margin="4" Text="{StaticResource selectOptionsToBackup}" />
         <!-- backup checkboxes -->
         <StackPanel x:Name="checkBoxes">
-            <CheckBox x:Name="bWorlds" Margin="8,4" Content="Backup worlds" Unchecked="anyUnchecked" />
-            <CheckBox x:Name="bServerProperties" Margin="8,4" Content="Backup server.properties" Unchecked="anyUnchecked" />
-            <CheckBox x:Name="bWhiteList" Margin="8,4" Content="Backup white list" Unchecked="anyUnchecked" />
-            <CheckBox x:Name="bOps" Margin="8,4" Content="Backup ops" Unchecked="anyUnchecked" />
-            <CheckBox x:Name="bBanned" Margin="8,4" Content="Backup banned players and IPs" Unchecked="anyUnchecked" />
-            <CheckBox x:Name="bLogs" Margin="8,4" Content="Backup logs" Unchecked="anyUnchecked" />
-            <CheckBox x:Name="bEverything" Margin="8,4" Content="Backup everything (including other folders)" Checked="everythingChecked" Unchecked="everythingUnchecked" />
+            <CheckBox x:Name="bWorlds" Margin="8,4" Content="{StaticResource backupWorlds}" Unchecked="anyUnchecked" />
+            <CheckBox x:Name="bServerProperties" Margin="8,4" Content="{StaticResource backupSvProperties}" Unchecked="anyUnchecked" />
+            <CheckBox x:Name="bWhiteList" Margin="8,4" Content="{StaticResource backupWhiteList}" Unchecked="anyUnchecked" />
+            <CheckBox x:Name="bOps" Margin="8,4" Content="{StaticResource backupOps}" Unchecked="anyUnchecked" />
+            <CheckBox x:Name="bBanned" Margin="8,4" Content="{StaticResource backupBanned}" Unchecked="anyUnchecked" />
+            <CheckBox x:Name="bLogs" Margin="8,4" Content="{StaticResource backupLogs}" Unchecked="anyUnchecked" />
+            <CheckBox x:Name="bEverything" Margin="8,4" Content="{StaticResource backupEverything}" Checked="everythingChecked" Unchecked="everythingUnchecked" />
         </StackPanel>
-        <Button x:Name="generateBackupButton" Style="{StaticResource PlainButton}" Content="Generate backup" Height="32" Margin="4" Click="generateBackup" />
+        <Button x:Name="generateBackupButton" Style="{StaticResource PlainButton}" Content="{StaticResource generateBackup}" Height="32" Margin="4" Click="generateBackup" />
     </StackPanel>
 </UserControl>

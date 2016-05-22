@@ -7,7 +7,7 @@
         Title="{StaticResource sEditServer}" SizeToContent="WidthAndHeight" FontSize="14" Loaded="loaded">
 
     <TabControl>
-        <TabItem Header="Manage server">
+        <TabItem Header="{StaticResource manageServer}">
             <StackPanel>
                 <Grid>
                     <Grid.ColumnDefinitions>
@@ -23,20 +23,20 @@
                     <Separator Grid.Column="1" Style="{StaticResource VerticalSeparatorStyle}" />
                     <StackPanel Grid.Column="2" Margin="4">
                         <StackPanel Orientation="Horizontal">
-                            <TextBlock Text="World to use:" VerticalAlignment="Center" />
-                            <ComboBox x:Name="worldsList" Margin="4,0,4,0" Text="Loading..." IsEditable="True" TextBoxBase.TextChanged="worldsListTextChanged" />
-                            <Button Grid.Column="1" Content="Add world from .zip" Style="{StaticResource PlainButton}" Height="24" Click="addWorldClick" />
+                            <TextBlock Text="{StaticResource worldToUse}" VerticalAlignment="Center" />
+                            <ComboBox x:Name="worldsList" Margin="4,0,4,0" Text="{StaticResource loading}" IsEditable="True" TextBoxBase.TextChanged="worldsListTextChanged" />
+                            <Button Grid.Column="1" Content="{StaticResource addWorldFromZip}" Style="{StaticResource PlainButton}" Height="24" Click="addWorldClick" />
                         </StackPanel>
-                        <TextBlock x:Name="worldWillGenerate" Text="A new world will be generated" Margin="0,0,0,8" Visibility="Collapsed" />
+                        <TextBlock x:Name="worldWillGenerate" Text="{StaticResource newWorldWillGenerate}" Margin="0,0,0,8" Visibility="Collapsed" />
 
-                        <Button Grid.Column="1" Content="Delete selected world" x:Name="deleteSelectedWorld" Style="{StaticResource PlainButton}" Margin="0,4,0,4" Height="24" Click="deleteSelectedWorldClick" Visibility="Collapsed" />
+                        <Button Grid.Column="1" Content="{StaticResource deleteSelectedWorld}" x:Name="deleteSelectedWorld" Style="{StaticResource PlainButton}" Margin="0,4,0,4" Height="24" Click="deleteSelectedWorldClick" Visibility="Collapsed" />
                         <Button Grid.Column="1" Content="{StaticResource sEditProperties}" Style="{StaticResource PlainButton}" Margin="0,4,0,4" Height="24" Click="editPropertiesClick" />
-                        <Button Grid.Column="1" Content="Open containing folder" Style="{StaticResource PlainButton}" Margin="0,4,0,4" Height="24" Click="openContainingFolderClick" />
+                        <Button Grid.Column="1" Content="{StaticResource openContainingFolder}" Style="{StaticResource PlainButton}" Margin="0,4,0,4" Height="24" Click="openContainingFolderClick" />
                     </StackPanel>
                 </Grid>
             </StackPanel>
         </TabItem>
-        <TabItem Header="Server details" >
+        <TabItem Header="{StaticResource serverDetails}" >
             <StackPanel Margin="4">
                 <!-- server name -->
                 <Grid>
@@ -113,7 +113,7 @@
                 </Grid>
             </StackPanel>
         </TabItem>
-        <TabItem Header="MOTD" >
+        <TabItem Header="{StaticResource motd}" >
             <local:MOTDTextBox x:Name="motdBox" TextChanged="motdChanged" />
         </TabItem>
     </TabControl>

@@ -7,21 +7,21 @@
     <StackPanel Margin="4">
         <!-- title -->
         <StackPanel Orientation="Horizontal">
-            <TextBlock Text="Load backup: " VerticalAlignment="Center" />
+            <TextBlock Text="{StaticResource loadBackup}" VerticalAlignment="Center" Margin="0,0,4,0" />
             <ComboBox x:Name="backupsList" DisplayMemberPath="DisplayName" SelectionChanged="backupsListChanged" />
         </StackPanel>
         <!-- info -->
-        <TextBlock Margin="4" Text="Please select all the options you want to load:" />
+        <TextBlock Margin="4" Text="{StaticResource selectOptionsToLoad}" />
         <!-- backup checkboxes -->
         <StackPanel x:Name="checkBoxes">
-            <CheckBox x:Name="bWorlds" Margin="8,4" Content="Load worlds" Unchecked="anyUnchecked" />
-            <CheckBox x:Name="bServerProperties" Margin="8,4" Content="Load server.properties" Unchecked="anyUnchecked" />
-            <CheckBox x:Name="bWhiteList" Margin="8,4" Content="Load white list" Unchecked="anyUnchecked" />
-            <CheckBox x:Name="bOps" Margin="8,4" Content="Load ops" Unchecked="anyUnchecked" />
-            <CheckBox x:Name="bBanned" Margin="8,4" Content="Load banned players and IPs" Unchecked="anyUnchecked" />
-            <CheckBox x:Name="bLogs" Margin="8,4" Content="Load logs" Unchecked="anyUnchecked" />
-            <CheckBox x:Name="bEverything" Margin="8,4" Content="Load everything (including other folders)" Checked="everythingChecked" Unchecked="everythingUnchecked" />
+            <CheckBox x:Name="bWorlds" Margin="8,4" Content="{StaticResource loadWorlds}" Unchecked="anyUnchecked" />
+            <CheckBox x:Name="bServerProperties" Margin="8,4" Content="{StaticResource loadSvProperties}" Unchecked="anyUnchecked" />
+            <CheckBox x:Name="bWhiteList" Margin="8,4" Content="{StaticResource loadWhiteList}" Unchecked="anyUnchecked" />
+            <CheckBox x:Name="bOps" Margin="8,4" Content="{StaticResource loadOps}" Unchecked="anyUnchecked" />
+            <CheckBox x:Name="bBanned" Margin="8,4" Content="{StaticResource loadBanned}" Unchecked="anyUnchecked" />
+            <CheckBox x:Name="bLogs" Margin="8,4" Content="{StaticResource loadLogs}" Unchecked="anyUnchecked" />
+            <CheckBox x:Name="bEverything" Margin="8,4" Content="{StaticResource loadEverything}" Checked="everythingChecked" Unchecked="everythingUnchecked" />
         </StackPanel>
-        <Button x:Name="loadBackup" Style="{StaticResource PlainButton}" Content="Load backup" Height="32" Margin="4" IsEnabled="False" Click="loadBackupClick" />
+        <Button x:Name="loadBackup" Style="{StaticResource PlainButton}" Content="{StaticResource loadBackup}" Height="32" Margin="4" IsEnabled="False" Click="loadBackupClick" />
     </StackPanel>
 </UserControl>

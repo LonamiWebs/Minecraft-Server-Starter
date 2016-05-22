@@ -1,14 +1,14 @@
-﻿
-using ExtensionMethods;
-/// <copyright file="ServerProperty.cs" company="LonamiWebs">
+﻿/// <copyright file="ServerProperty.cs" company="LonamiWebs">
 ///   Copyright (c) 2016 All Rights Reserved
 /// </copyright>
 /// <author>Lonami Exo</author>
 /// <date>February 2016</date>
 /// <summary>Class representing a server.properties property</summary>
+
 using System;
 using System.Collections.Generic;
 using System.Globalization;
+using ExtensionMethods;
 
 namespace Minecraft_Server_Starter
 {
@@ -100,7 +100,6 @@ namespace Minecraft_Server_Starter
         #region Constant fields
 
         // took from http://Minecraft.gamepedia.com/Server.properties
-        // TODO and from http://Minecraft-es.gamepedia.com/Server.properties
         static readonly Dictionary<string, string> descriptions =
             new Dictionary<string, string>
             {

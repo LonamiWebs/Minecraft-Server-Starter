@@ -67,7 +67,7 @@ namespace Minecraft_Server_Starter
         #endregion
 
         #region Server related
-        
+
         #region Server operations
 
         // delete server
@@ -106,7 +106,7 @@ namespace Minecraft_Server_Starter
         void upgradeServerClick(object sender, RoutedEventArgs e)
         {
             // check if running
-            if (CheckServerRunning()) // TODO use a different text!
+            if (CheckServerRunning())
                 return;
 
             // else we can upgrde
@@ -244,7 +244,7 @@ namespace Minecraft_Server_Starter
         }
 
         #endregion
-        
+
         #region Server status
 
         async void serverStatusChanged(Status status)
@@ -559,12 +559,12 @@ namespace Minecraft_Server_Starter
             if (arePortsOpen) // close them
             {
                 await PortManager.ClosePort(port);
-                portsText.Text = "Open port";
+                portsText.Text = Res.GetStr("openPort");
             }
             else // open them
             {
                 await PortManager.OpenPort(port);
-                portsText.Text = "Close port";
+                portsText.Text = Res.GetStr("closePort");
             }
 
             arePortsOpen = !arePortsOpen;

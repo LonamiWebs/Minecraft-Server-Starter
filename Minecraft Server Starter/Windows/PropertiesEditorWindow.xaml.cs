@@ -6,7 +6,6 @@
 /// <summary>Window used to edit a server.properties file</summary>
 
 using Minecraft_Server_Starter.Controls;
-using System.ComponentModel;
 using System.IO;
 using System.Windows;
 using System.Windows.Input;
@@ -19,9 +18,7 @@ namespace Minecraft_Server_Starter
 
         // which file are we editing?
         string file;
-        // did we save this file yet?
-        bool saved = true;
-        
+
         // currently open server properties
         ServerProperties svProperties;
 
@@ -68,7 +65,7 @@ namespace Minecraft_Server_Starter
             {
                 if (!property.PassesSearch(searchBox.Text))
                     continue;
-                
+
                 if (leftColumn)
                     leftColumnPanel.Children.Add(new ServerPropertyControl(property, PropertyChanged));
                 else
@@ -87,63 +84,12 @@ namespace Minecraft_Server_Starter
 
         #region Events
 
-        // save or close
-        void saveClick(object sender, RoutedEventArgs e)
-        {
-            doSave();
-            Close();
-        }
-
-        void cancelClick(object sender, RoutedEventArgs e)
-        {
-            Close();
-        }
-
-        // notify user if they didn't save
-        void Window_Closing(object sender, CancelEventArgs e)
-        {
-            if (!saved)
-                switch (MessageBox.Show("No has guardado el archivo. ¿Desea guardarlo ahora?",
-                    "Archivo sin guardar", MessageBoxButton.YesNo, MessageBoxImage.Warning))
-                {
-                    case MessageBoxResult.Yes:
-                        doSave();
-                        break;
-                    case MessageBoxResult.Cancel:
-                        e.Cancel = true;
-                        break;
-                }
-        }
-
-        #endregion
-
-        #region Save
-
-        // save the file
-        void doSave()
-        {
-            saved = true;
-            var encoded = svProperties.Encode();
-
-            // try saving until success
-            bool retry = false;
-            do
-            {
-                try { File.WriteAllText(file, encoded); }
-                catch
-                {
-                    retry = MessageBox.Show("No se pudo guardar el archivo. ¿Quieres intentarlo otra vez?",
-                        "Error", MessageBoxButton.YesNo, MessageBoxImage.Error) == MessageBoxResult.Yes;
-                }
-            }
-            while (retry);
-        }
-
-        #endregion
-
+        // search
         void searchBox_KeyUp(object sender, KeyEventArgs e)
         {
             LoadProperties();
         }
+
+        #endregion
     }
 }

@@ -54,7 +54,7 @@
             </ComboBox>
             <Button x:Name="tryNotification" Content="{StaticResource sTryIt}" Style="{StaticResource PlainButton}" Margin="10,0,0,0" MinWidth="48" Click="TryNotificationClick" />
         </StackPanel>
-        <CheckBox x:Name="ignoreCommandsBlockCheckBox" Content="Ignore commands block output (recommended for servers full of them)" Checked="ignoreCommandsBlockCheck" Unchecked="ignoreCommandsBlockCheck" />
+        <CheckBox x:Name="ignoreCommandsBlockCheckBox" Content="{StaticResource ignoreCmdBlockOutput}" Checked="ignoreCommandsBlockCheck" Unchecked="ignoreCommandsBlockCheck" />
 
         <!-- reset and exit -->
         <Grid Margin="0,24,0,0" Height="32">
@@ -64,8 +64,8 @@
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
-            <Button Grid.Column="0" Content="Clear cache" Style="{StaticResource PlainButton}" Click="clearCacheClick" Margin="4,0"/>
-            <Button Grid.Column="1" Content="Uninstall" Style="{StaticResource PlainButton}" Click="uninstallClick" Margin="4,0"/>
+            <Button Grid.Column="0" Content="{StaticResource clearCache}" Style="{StaticResource PlainButton}" Click="clearCacheClick" Margin="4,0"/>
+            <Button Grid.Column="1" Content="{StaticResource uninstall}" Style="{StaticResource PlainButton}" Click="uninstallClick" Margin="4,0"/>
             <Button Grid.Column="2" Content="{StaticResource sResetSettings}" Style="{StaticResource PlainButton}" Click="resetSettingsClick" Margin="4,0"/>
             <Button Grid.Column="3" Content="{StaticResource sAcceptAndClose}" Style="{StaticResource PlainButton}" Click="acceptClick" Margin="4,0" />
         </Grid>

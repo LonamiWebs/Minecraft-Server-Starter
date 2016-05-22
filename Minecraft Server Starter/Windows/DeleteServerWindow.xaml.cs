@@ -77,8 +77,8 @@ namespace Minecraft_Server_Starter
         // full delete
         void deleteClick(object sender, RoutedEventArgs e)
         {
-            if (MessageBox.Show("Are you sure you want to delete this server? You will not be able to recover it!",
-                "Think it twice", MessageBoxButton.YesNo, MessageBoxImage.Warning) != MessageBoxResult.Yes)
+            if (MessageBox.Show(Res.GetStr("sureDeleteServer"),
+                Res.GetStr("thinkTwice"), MessageBoxButton.YesNo, MessageBoxImage.Warning) != MessageBoxResult.Yes)
                 return;
 
             startPerforming();
@@ -132,16 +132,16 @@ namespace Minecraft_Server_Starter
 
             if (success)
             {
-                MessageBox.Show("The server has been deleted successfully",
-                    "Success", MessageBoxButton.OK, MessageBoxImage.Information);
+                MessageBox.Show(Res.GetStr("serverDeletedSuccess"),
+                    Res.GetStr("success"), MessageBoxButton.OK, MessageBoxImage.Information);
 
                 Deleted = true;
                 Close();
             }
             else
             {
-                MessageBox.Show("An error occured while trying to delete the server. Please try again later",
-                    "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show(Res.GetStr("errorDeletingServer"),
+                    Res.GetStr("error"), MessageBoxButton.OK, MessageBoxImage.Error);
 
                 buttons.IsEnabled = true;
                 hideInfosExcept(null);

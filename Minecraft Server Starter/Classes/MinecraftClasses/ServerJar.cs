@@ -24,7 +24,7 @@ namespace Minecraft_Server_Starter
             string version = null;
 
             if (!File.Exists(serverJar))
-                return "Unexisting";
+                return Res.GetStr("unexisting");
 
             await Task.Run(() =>
             {
@@ -69,7 +69,7 @@ namespace Minecraft_Server_Starter
                 }
             });
 
-            return version ?? "Unknown";
+            return version ?? Res.GetStr("unknown");
         }
 
         // keep in mind this moves the stream position

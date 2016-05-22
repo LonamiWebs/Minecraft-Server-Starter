@@ -15,7 +15,7 @@ using System.Text.RegularExpressions;
 namespace Minecraft_Server_Starter
 {
     public enum Status { Opening, Open, Closing, Closed }
-    
+
     public class MinecraftServer
     {
         #region Private fields
@@ -34,7 +34,7 @@ namespace Minecraft_Server_Starter
 
         // only one format: Done (d...
         Regex loadedRegex = new Regex(@"Done \(\d", RegexOptions.Compiled);
-        
+
         Regex commandBlockRegex = new Regex(@"\[(.+?)\]", RegexOptions.Compiled);
         const string serverName = "Server"; // avoid these on command blocks
 
@@ -90,7 +90,8 @@ namespace Minecraft_Server_Starter
         public List<string> OnlinePlayers { get { return new List<string>(onlinePlayers); } }
 
         // ignore commands block
-        public bool IgnoreCommandBlocks {
+        public bool IgnoreCommandBlocks
+        {
             get { return Settings.GetValue<bool>("ignoreCommandsBlock"); }
             set { Settings.SetValue<bool>("ignoreCommandsBlock", value); }
         }

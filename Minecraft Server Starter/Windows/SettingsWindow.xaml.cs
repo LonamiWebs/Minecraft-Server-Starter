@@ -185,7 +185,7 @@ namespace Minecraft_Server_Starter
         // this helps by giving an example
         void TryNotificationClick(object sender, RoutedEventArgs e)
         {
-            Toast.makeText(Res.GetStr("descRconPassword"), Res.GetStr("sTestNotif"));
+            Toast.makeText(Res.GetStr("appTitle"), Res.GetStr("sTestNotif"));
         }
 
         // this helps by letting you search the java path
@@ -330,10 +330,20 @@ namespace Minecraft_Server_Starter
 
         #region Reset and accept
 
+        void clearCacheClick(object sender, RoutedEventArgs e)
+        {
+            if (MessageBox.Show(Res.GetStr("clearCacheContent", MinecraftVersion.GetSizeUsedByCache()), Res.GetStr("clearCache"),
+                MessageBoxButton.OKCancel, MessageBoxImage.Question) == MessageBoxResult.OK)
+            {
+                MinecraftVersion.ClearCache();
+                MessageBox.Show(Res.GetStr("cacheHasCleared"), Res.GetStr("cacheCleared"), MessageBoxButton.OK, MessageBoxImage.Information);
+            }
+        }
+
         void uninstallClick(object sender, RoutedEventArgs e)
         {
             var folder = Settings.GetValue<string>("mssFolder");
-            if (MessageBox.Show(string.Format("Uninstalling Minecraft Server Starter will delete EVERYTHING (servers, backups, cache) from your disk and the application will be closed. Are you sure you want to continue? Please make sure you don't have any personal files under {0}", folder), "Uninstall?",
+            if (MessageBox.Show(string.Format(Res.GetStr("warningUninstallContent"), folder), Res.GetStr("uninstallQuestion"),
                 MessageBoxButton.OKCancel, MessageBoxImage.Question) == MessageBoxResult.OK)
             {
 
@@ -343,7 +353,7 @@ namespace Minecraft_Server_Starter
                     return;
                 }
 
-                switch (MessageBox.Show("Please make sure you don't have any personal files. Do you wish to open the folder now instead uninstalling everything?", "Think it twice", MessageBoxButton.YesNoCancel, MessageBoxImage.Warning))
+                switch (MessageBox.Show(Res.GetStr("warningWarningUninstallContent"), Res.GetStr("thinkTwice"), MessageBoxButton.YesNoCancel, MessageBoxImage.Warning))
                 {
                     case MessageBoxResult.Yes:
                         Process.Start(folder);
@@ -359,8 +369,8 @@ namespace Minecraft_Server_Starter
                             try { Directory.Delete(folder, true); } catch { success = false; }
                         }
 
-                        MessageBox.Show("Minecraft Server Starter has been uninstalled from your computer.",
-                            success ? "Uninstall success" : "Uninstall incomplete", MessageBoxButton.OK, MessageBoxImage.Information);
+                        MessageBox.Show(Res.GetStr("uninstallSuccess"),
+                            success ? Res.GetStr("uninstallSuccessTitle") : Res.GetStr("uninstallFailed"), MessageBoxButton.OK, MessageBoxImage.Information);
 
                         Application.Current.Shutdown();
                         break;
@@ -392,10 +402,5 @@ namespace Minecraft_Server_Starter
         }
 
         #endregion
-
-        void clearCacheClick(object sender, RoutedEventArgs e)
-        {
-
-        }
     }
 }

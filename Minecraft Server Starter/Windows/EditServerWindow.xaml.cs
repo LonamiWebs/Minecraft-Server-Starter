@@ -25,7 +25,7 @@ namespace Minecraft_Server_Starter
         bool loading = true;
 
         #endregion
-        
+
         #region Constructor and loading
 
         public EditServerWindow(Server server)
@@ -120,7 +120,7 @@ namespace Minecraft_Server_Starter
         #endregion
 
         #region More windows
-        
+
         void editPropertiesClick(object sender, RoutedEventArgs e)
         {
             PropertiesEditorWindow.EditServer(server);
@@ -135,9 +135,10 @@ namespace Minecraft_Server_Starter
 
         async void addWorldClick(object sender, RoutedEventArgs e)
         {
-            var ofd = new OpenFileDialog {
-                Title = "Please select a .zip file containing a world",
-                Filter = "Zip file|*.zip"
+            var ofd = new OpenFileDialog
+            {
+                Title = Res.GetStr("selectZip"),
+                Filter = Res.GetStr("zipFilter")
             };
 
             if (ofd.ShowDialog() ?? false)
@@ -148,12 +149,12 @@ namespace Minecraft_Server_Starter
                 }
                 else
                 {
-                    MessageBox.Show("You have selected an invalid .zip file!", "Invalid world file",
+                    MessageBox.Show(Res.GetStr("invalidZip"), Res.GetStr("invalidWorld"),
                         MessageBoxButton.OK, MessageBoxImage.Error);
                 }
             }
         }
-        
+
         void updateLevelNameProperty()
         {
             if (loading) return;
@@ -173,8 +174,8 @@ namespace Minecraft_Server_Starter
 
         void deleteSelectedWorldClick(object sender, RoutedEventArgs e)
         {
-            if (MessageBox.Show("This world will be lost forever. Do you wish to continue?",
-                "World will be lost", MessageBoxButton.OKCancel, MessageBoxImage.Information)
+            if (MessageBox.Show(Res.GetStr("warningWorldWillLose"),
+                Res.GetStr("warningWorldWillLoseTitle"), MessageBoxButton.OKCancel, MessageBoxImage.Information)
                 == MessageBoxResult.OK)
             {
                 using (WaitCursor.New)
@@ -186,7 +187,7 @@ namespace Minecraft_Server_Starter
                     try { Directory.Delete(world, true); } catch { }
                 }
 
-                MessageBox.Show("The world has been deleted", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
+                MessageBox.Show(Res.GetStr("worldDeleted"), Res.GetStr("success"), MessageBoxButton.OK, MessageBoxImage.Information);
             }
         }
 

@@ -40,8 +40,8 @@ namespace Minecraft_Server_Starter
         void loadBackupChecked(object sender, RoutedEventArgs e)
         {
             if (isServerOpen)
-                MessageBox.Show("The server must be closed before loading a backup",
-                    "Server is open", MessageBoxButton.OK, MessageBoxImage.Warning);
+                MessageBox.Show(Res.GetStr("serverMustBeClosed"),
+                    Res.GetStr("svIsOpen"), MessageBoxButton.OK, MessageBoxImage.Warning);
 
             else
                 pages.ShowPage(new LoadBackupPage(server));

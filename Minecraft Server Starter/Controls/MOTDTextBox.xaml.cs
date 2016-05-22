@@ -301,7 +301,7 @@ namespace Minecraft_Server_Starter
                     {
                         if (style == CharacterStyle.Reset)
                         {
-                            lastColor = ColorCode.First().Key; 
+                            lastColor = ColorCode.First().Key;
                             lastStyle = 0;
                         }
                         else
@@ -422,7 +422,7 @@ namespace Minecraft_Server_Starter
         {
             InitializeComponent();
             lastFocusedBox = motdLine1;
-            
+
             foreach (var colorCode in ColorCode)
             {
                 var button = new Button
@@ -611,7 +611,7 @@ namespace Minecraft_Server_Starter
         #endregion
 
         #region Utils
-        
+
         // get a new string of the given character that fills all the available pixels
         static string getMaxAvailableStringRoundingTop(double availablePixels, char c, bool bold)
         {

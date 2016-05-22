@@ -58,21 +58,21 @@ namespace Minecraft_Server_Starter
         async void generateBackup(object sender, RoutedEventArgs e)
         {
             generateBackupButton.IsEnabled = false;
-            generateBackupButton.Content = "Generating backup...";
+            generateBackupButton.Content = Res.GetStr("generatingBackup");
 
             if (await GetBackup(server).Save(isServerOpen))
             {
-                MessageBox.Show("The backup has been generated successfully",
-                    "Success", MessageBoxButton.OK, MessageBoxImage.Information);
+                MessageBox.Show(Res.GetStr("backupGenerated"),
+                    Res.GetStr("success"), MessageBoxButton.OK, MessageBoxImage.Information);
             }
             else
             {
-                MessageBox.Show("Failed to save the backup", "Backup not saved",
+                MessageBox.Show(Res.GetStr("backupGenerationFailed"), Res.GetStr("backupGenFailedTitle"),
                     MessageBoxButton.OK, MessageBoxImage.Error);
             }
 
             generateBackupButton.IsEnabled = true;
-            generateBackupButton.Content = "Generate backup";
+            generateBackupButton.Content = Res.GetStr("generateBackup");
         }
 
         #endregion

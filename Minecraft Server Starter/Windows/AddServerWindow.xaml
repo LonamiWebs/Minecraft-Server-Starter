@@ -55,10 +55,10 @@
                                 <TextBlock Grid.Column="0" Text="{StaticResource difficultyColon}" VerticalAlignment="Center" Margin="0,0,4,0" />
                                 <ComboBox x:Name="difficultyComboBox" Grid.Column="1" SelectedIndex="2">
                                     <ComboBox.Items>
-                                        <ComboBoxItem Content="Peaceful" />
-                                        <ComboBoxItem Content="Easy" />
-                                        <ComboBoxItem Content="Normal" />
-                                        <ComboBoxItem Content="Hard" />
+                                        <ComboBoxItem Content="{StaticResource peaceful}" />
+                                        <ComboBoxItem Content="{StaticResource easy}" />
+                                        <ComboBoxItem Content="{StaticResource sPriorityNormal}" />
+                                        <ComboBoxItem Content="{StaticResource hard}" />
                                     </ComboBox.Items>
                                 </ComboBox>
                             </Grid>
@@ -71,10 +71,10 @@
                                 <TextBlock Grid.Column="0" Text="{StaticResource gamemodeColon}" VerticalAlignment="Center" Margin="0,0,4,0" />
                                 <ComboBox x:Name="gameModeComboBox" Grid.Column="1" SelectedIndex="0">
                                     <ComboBox.Items>
-                                        <ComboBoxItem Content="Survival" />
-                                        <ComboBoxItem Content="Creative" />
-                                        <ComboBoxItem Content="Adventure" />
-                                        <ComboBoxItem Content="Spectator" />
+                                        <ComboBoxItem Content="{StaticResource survival}" />
+                                        <ComboBoxItem Content="{StaticResource creative}" />
+                                        <ComboBoxItem Content="{StaticResource adventure}" />
+                                        <ComboBoxItem Content="{StaticResource spectator}" />
                                     </ComboBox.Items>
                                 </ComboBox>
                             </Grid>

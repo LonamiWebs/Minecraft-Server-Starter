@@ -4,13 +4,13 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Minecraft_Server_Starter"
-        Title="Upgrade server" Loaded="Window_Loaded" SizeToContent="WidthAndHeight" ResizeMode="NoResize" MaxWidth="480">
+        Title="{StaticResource stUpgradeServer}" Loaded="Window_Loaded" SizeToContent="WidthAndHeight" ResizeMode="NoResize" MaxWidth="480">
     <StackPanel Margin="4">
         <TextBlock Margin="0,0,0,4">
-            <Run x:Name="currentVersion1Run" Text="Analysing current server version..." />
+            <Run x:Name="currentVersion1Run" Text="{StaticResource analysingSvVersion}" />
             <Run x:Name="currentVersion2Run" />
         </TextBlock>
-        <TextBlock Text="Select the new version you'd like to use:" />
+        <TextBlock Text="{StaticResource selectNewVersion}" />
         <local:SelectJarPage x:Name="selectJarPage"  ListUpdated="SelectJarPage_ListUpdated" />
         <Separator />
 
@@ -22,8 +22,8 @@
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
 
-            <Button Grid.Column="0"  Style="{StaticResource PlainButton}" Content="Cancel" Click="cancelClick" />
-            <Button Grid.Column="1" x:Name="upgradeButton" Style="{StaticResource PlainButton}" Content="Upgrade" Click="upgradeClick" />
+            <Button Grid.Column="0"  Style="{StaticResource PlainButton}" Content="{StaticResource sCancel}" Click="cancelClick" />
+            <Button Grid.Column="1" x:Name="upgradeButton" Style="{StaticResource PlainButton}" Content="{StaticResource upgrade}" Click="upgradeClick" />
         </Grid>
         
     </StackPanel>

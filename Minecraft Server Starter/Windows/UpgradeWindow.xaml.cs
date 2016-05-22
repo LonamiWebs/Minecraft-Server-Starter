@@ -31,7 +31,7 @@ namespace Minecraft_Server_Starter
             currentVersion2Run.Text = await ServerJar.GetServerVersion(server.ServerJar);
             current = new MinecraftVersion(currentVersion2Run.Text);
 
-            currentVersion1Run.Text = "Current version:";
+            currentVersion1Run.Text = Res.GetStr("currentVersionColon");
 
             CheckIfNewIsAvailable();
         }
@@ -55,13 +55,13 @@ namespace Minecraft_Server_Starter
                 current.ID, latest.Snapshot, selectJarPage.MinecraftVersions);
 
             if (releaseComparision > 0)
-                canUpgradeBlock.Text = "There is a new higher version available. It is recommended to upgrade your server.";
+                canUpgradeBlock.Text = Res.GetStr("higherVersionAvailable");
 
             else if (snapshotComparision > 0)
-                canUpgradeBlock.Text = "There is a new snapshot available. It is recommended to backup your worlds first if you wish to upgrade your server.";
+                canUpgradeBlock.Text = Res.GetStr("higherSnapshotAvailable");
 
             else
-                canUpgradeBlock.Text = "You're up to date! If you want to downgrade your server, it is recommended to perform a backup first.";
+                canUpgradeBlock.Text = Res.GetStr("noHigherAvailable");
         }
 
         void cancelClick(object sender, RoutedEventArgs e)
@@ -76,9 +76,9 @@ namespace Minecraft_Server_Starter
 
             var progress = new Progress<DownloadProgressChangedEventArgs>();
             progress.ProgressChanged += (s, de) =>
-                Title = $"Descargando... {de.ProgressPercentage}%";
+                Title = Res.GetStr("downloadingPercentage", de.ProgressPercentage);
 
-            var result = await selectJarPage.GetSelectedJar(server.ServerJar, progress, downloadCts);
+            var result = await selectJarPage.GetSelectedJarToLocalFile(server.ServerJar, progress, downloadCts);
             if (!result.HasValue) // operation cancelled
                 return;
 

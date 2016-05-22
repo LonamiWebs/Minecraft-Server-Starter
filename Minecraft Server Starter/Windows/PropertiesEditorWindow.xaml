@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Minecraft_Server_Starter"
-        Title="{StaticResource sPropertiesEditor}" ResizeMode="CanResizeWithGrip" Closing="Window_Closing" SizeToContent="WidthAndHeight" MinWidth="520">
+        Title="{StaticResource sPropertiesEditor}" ResizeMode="CanResizeWithGrip" SizeToContent="WidthAndHeight" MinWidth="520">
 
     <StackPanel>
         <ScrollViewer>
@@ -22,7 +22,7 @@
         <AdornerDecorator Margin="4">
             <TextBox x:Name="searchBox" VerticalAlignment="Center" KeyUp="searchBox_KeyUp">
                 <local:WatermarkService.Watermark>
-                    <TextBlock Margin="4,0,0,0" Text="Type here to search..." />
+                    <TextBlock Margin="4,0,0,0" Text="{StaticResource typeToSearch}" />
                 </local:WatermarkService.Watermark>
             </TextBox>
         </AdornerDecorator>

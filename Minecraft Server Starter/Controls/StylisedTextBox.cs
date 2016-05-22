@@ -143,7 +143,7 @@ namespace Minecraft_Server_Starter
             {
                 if (value >= characters.Count)
                     throw new NotImplementedException();
-                
+
                 characters.RemoveRange(value, characters.Count - value);
                 base.Text = base.Text.Substring(0, value);
                 CaretIndex = value;
@@ -471,7 +471,7 @@ namespace Minecraft_Server_Starter
                 return;
 
             checkDeletion();
-            
+
             int maxLength = MaxLength > 0 ? MaxLength : int.MaxValue;
             if (characters.Count + chars.Count <= maxLength)
             {

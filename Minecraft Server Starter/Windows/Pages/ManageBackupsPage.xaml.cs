@@ -14,7 +14,7 @@ namespace Minecraft_Server_Starter
     {
         #region Private fields
 
-        const string BackupSizeInfo = "This file is {0} size and has the following:";
+        static string BackupSizeInfo => Res.GetStr("fileSizeAndContents");
 
         Server server;
 
@@ -85,14 +85,14 @@ namespace Minecraft_Server_Starter
 
         void deleteClick(object sender, RoutedEventArgs e)
         {
-            if (MessageBox.Show("Are you sure you want to delete this backup?", "Confirm delete",
+            if (MessageBox.Show(Res.GetStr("sureDeleteBackup"), Res.GetStr("confirmDelete"),
                 MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
             {
                 if (((Backup)backupsList.SelectedItem).Delete())
-                    MessageBox.Show("The backup has been deleted", "Backup deleted",
+                    MessageBox.Show(Res.GetStr("backupDeletedContent"), Res.GetStr("backupDeletedTitle"),
                         MessageBoxButton.OK, MessageBoxImage.Information);
                 else
-                    MessageBox.Show("The backup could not be deleted. Please try again later", "Error",
+                    MessageBox.Show(Res.GetStr("backupDeleteError"), Res.GetStr("error"),
                         MessageBoxButton.OK, MessageBoxImage.Error);
 
                 reloadBackupsList();

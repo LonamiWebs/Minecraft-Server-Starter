@@ -9,21 +9,21 @@
     <StackPanel Margin="4">
         <!-- title -->
         <StackPanel Orientation="Horizontal">
-            <TextBlock Text="Please select the backup you want to manage: " VerticalAlignment="Center" />
+            <TextBlock Text="{StaticResource selectBackupToManage}" VerticalAlignment="Center" />
             <ComboBox x:Name="backupsList" DisplayMemberPath="DisplayName" SelectionChanged="backupsListChanged" />
         </StackPanel>
         <!-- info -->
         <TextBlock Name="info" Margin="4" />
         <!-- backup checkboxes -->
         <StackPanel x:Name="checkBoxes">
-            <CheckBox x:Name="bWorlds" Margin="8,4" IsEnabled="False" Content="Has worlds?" />
-            <CheckBox x:Name="bServerProperties" Margin="8,4" IsEnabled="False" Content="Has server.properties?" />
-            <CheckBox x:Name="bWhiteList" Margin="8,4" IsEnabled="False" Content="Has white list?" />
-            <CheckBox x:Name="bOps" Margin="8,4" IsEnabled="False" Content="Has ops?" />
-            <CheckBox x:Name="bBanned" Margin="8,4" IsEnabled="False" Content="Has banned players and IPs?" />
-            <CheckBox x:Name="bLogs" Margin="8,4" IsEnabled="False" Content="Has logs?" />
-            <CheckBox x:Name="bEverything" Margin="8,4" IsEnabled="False" Content="Has everything (including other folders)?" />
+            <CheckBox x:Name="bWorlds" Margin="8,4" IsEnabled="False" Content="{StaticResource hasWorlds}" />
+            <CheckBox x:Name="bServerProperties" Margin="8,4" IsEnabled="False" Content="{StaticResource hasSvProperties}" />
+            <CheckBox x:Name="bWhiteList" Margin="8,4" IsEnabled="False" Content="{StaticResource hasWhiteList}" />
+            <CheckBox x:Name="bOps" Margin="8,4" IsEnabled="False" Content="{StaticResource hasOps}" />
+            <CheckBox x:Name="bBanned" Margin="8,4" IsEnabled="False" Content="{StaticResource hasBanned}" />
+            <CheckBox x:Name="bLogs" Margin="8,4" IsEnabled="False" Content="{StaticResource hasLogs}" />
+            <CheckBox x:Name="bEverything" Margin="8,4" IsEnabled="False" Content="{StaticResource hasEverything}" />
         </StackPanel>
-        <Button IsEnabled="False" x:Name="delete" Style="{StaticResource PlainButton}" Content="Delete backup" Height="32" Margin="4" Click="deleteClick" />
+        <Button IsEnabled="False" x:Name="delete" Style="{StaticResource PlainButton}" Content="{StaticResource deleteBackup}" Height="32" Margin="4" Click="deleteClick" />
     </StackPanel>
 </UserControl>

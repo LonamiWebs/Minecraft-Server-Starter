@@ -101,6 +101,12 @@ namespace Minecraft_Server_Starter
 
         void checkEnableAccept() => accept.IsEnabled = !string.IsNullOrWhiteSpace(name.Text);
 
+        void selectJarPageNameUpdateRequest(string newName)
+        {
+            if (string.IsNullOrWhiteSpace(name.Text))
+                name.Text = newName;
+        }
+
         #endregion
 
         #region Accept and cancel
@@ -113,9 +119,9 @@ namespace Minecraft_Server_Starter
 
             var progress = new Progress<DownloadProgressChangedEventArgs>();
             progress.ProgressChanged += (s, de) =>
-                Title = $"Descargando... {de.ProgressPercentage}%";
+                Title = Res.GetStr("downloadingPercentage", de.ProgressPercentage);
 
-            var result = await selectJarPage.GetSelectedJar(Result.ServerJar, progress, downloadCts);
+            var result = await selectJarPage.GetSelectedJarToLocalFile(Result.ServerJar, progress, downloadCts);
             if (!result.HasValue) // operation cancelled
                 return;
 
@@ -182,11 +188,5 @@ namespace Minecraft_Server_Starter
         }
 
         #endregion
-
-        void selectJarPageNameUpdateRequest(string newName)
-        {
-            if (string.IsNullOrWhiteSpace(name.Text))
-                name.Text = newName;
-        }
     }
 }

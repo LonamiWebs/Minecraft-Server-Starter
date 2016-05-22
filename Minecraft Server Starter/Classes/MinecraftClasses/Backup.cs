@@ -228,7 +228,7 @@ namespace Minecraft_Server_Starter
                 {
                     if (!Directory.Exists(Path.GetDirectoryName(baseLocation)))
                         Directory.CreateDirectory(Path.GetDirectoryName(baseLocation));
-                    
+
                     var folder = Server.Location;
                     var folderName = Path.GetFileName(folder);
 

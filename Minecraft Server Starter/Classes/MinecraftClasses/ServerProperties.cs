@@ -213,7 +213,7 @@ white-list=false
                 case "spawn-npcs":
                 case "white-list":
                     return true;
-                    
+
                 default:
                     return false;
             }
@@ -224,10 +224,10 @@ white-list=false
             switch (propertyName)
             {
                 case "difficulty":
-                    return new string[] { "Peaceful", "Easy", "Normal", "Hard" };
+                    return new string[] { Res.GetStr("peaceful"), Res.GetStr("easy"), Res.GetStr("sPriorityNormal"), Res.GetStr("hard") };
 
                 case "gamemode":
-                    return new string[] { "Survival", "Creative", "Adventure", "Spectator" };
+                    return new string[] { Res.GetStr("survival"), Res.GetStr("creative"), Res.GetStr("adventure"), Res.GetStr("spectator") };
 
                 default:
                     throw new InvalidOperationException("There are no multiple choices for this property");

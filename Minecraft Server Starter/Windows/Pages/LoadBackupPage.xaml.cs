@@ -38,7 +38,7 @@ namespace Minecraft_Server_Starter
                 bWorlds.IsChecked.Value, bServerProperties.IsChecked.Value, bWhiteList.IsChecked.Value,
                 bOps.IsChecked.Value, bBanned.IsChecked.Value, bLogs.IsChecked.Value, bEverything.IsChecked.Value);
         }
-        
+
         public void LoadBackup(Backup backup)
         {
             foreach (CheckBox checkBox in checkBoxes.Children)
@@ -117,7 +117,7 @@ namespace Minecraft_Server_Starter
                 selectedOptions.WhiteList, selectedOptions.Ops, selectedOptions.Banned,
                 selectedOptions.Logs, selectedOptions.Everything);
 
-            MessageBox.Show("The backup has been loaded successfully", "Success",
+            MessageBox.Show(Res.GetStr("backupLoadedContent"), Res.GetStr("success"),
                 MessageBoxButton.OK, MessageBoxImage.Information);
         }
 

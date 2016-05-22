@@ -172,7 +172,7 @@ namespace Minecraft_Server_Starter
         const string baseServerUrl = "https://s3.amazonaws.com/Minecraft.Download/versions/{0}/minecraft_server.{0}.jar";
         const string baseClientUrl = "https://s3.amazonaws.com/Minecraft.Download/versions/{0}/{0}.jar";
 
-        
+
         // old minecraft server urls
         const string old12Url = "http://assets.minecraft.net/1_2/minecraft_server.jar";
         const string old10Url = "https://s3.amazonaws.com/MinecraftDownload/launcher/minecraft_server.jar";
@@ -242,7 +242,7 @@ namespace Minecraft_Server_Starter
         /// </summary>
         [DataMember(Name = "type")]
         public string Type { get; set; }
-        
+
         /// <summary>
         /// Url pointing to a .json file containing more information of this version
         /// </summary>
@@ -253,7 +253,7 @@ namespace Minecraft_Server_Starter
         /// Url pointing to the minecraft_server.jar file corresponding to this version. It can be null
         /// </summary>
         public string ServerUrl { get; set; }
-        
+
         /// <summary>
         /// Url pointing to the client .jar file corresponding to this version
         /// </summary>
@@ -269,7 +269,7 @@ namespace Minecraft_Server_Starter
         {
             ID = version;
 
-            switch(ID[0])
+            switch (ID[0])
             {
                 // alpha
                 case 'a': Type = "alpha"; break;
@@ -280,10 +280,11 @@ namespace Minecraft_Server_Starter
                 // old_alpha
                 case 'c':
                 case 'r':
-                case 'i': Type = "old_alpha";  break;
+                case 'i': Type = "old_alpha"; break;
 
                 // release or snapshot
-                default: Type = ID.Contains("pre") || ID.Contains("w") ? "snapshot" : "release";
+                default:
+                    Type = ID.Contains("pre") || ID.Contains("w") ? "snapshot" : "release";
                     break;
             }
         }
@@ -348,7 +349,7 @@ namespace Minecraft_Server_Starter
         {
             //var cache = Path.Combine(cacheFolder, Path.GetFileNameWithoutExtension(file)) +
             //    "_" + UnixDate.DateTimeToUnixTime(DateTime.Now) + ".jar";
-            
+
             if (!Directory.Exists(Path.GetDirectoryName(copyTo)))
                 Directory.CreateDirectory(Path.GetDirectoryName(copyTo));
 

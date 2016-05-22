@@ -17,7 +17,85 @@ namespace Minecraft_Server_Starter
     {
         public App()
         {
-            SelectCulture(Thread.CurrentThread.CurrentCulture.ToString());
+            
+
+            
+
+            
+
+            
+
+            
+
+            
+
+            
+
+            
+
+            
+
+            
+
+            
+
+            
+
+            
+
+            
+
+            
+
+            
+
+            
+
+            
+
+            
+
+            
+
+            
+
+            
+
+            
+
+            
+
+            
+
+            
+
+            
+
+            
+
+            
+
+            
+
+            
+
+            
+
+            
+
+            
+
+            
+
+            
+
+            
+
+            
+
+            
+
+            
 
             
 
@@ -56,7 +134,6 @@ namespace Minecraft_Server_Starter
             
 
             InitializeComponent();
-
             SelectCulture(Thread.CurrentThread.CurrentUICulture.ToString());
             
             Settings.Init("LonamiWebs\\Minecraft Server Starter", new Dictionary<string, dynamic>
@@ -83,11 +160,11 @@ namespace Minecraft_Server_Starter
 
             // We want our specific culture      
             string requestedCulture = string.Format("Strings.{0}.xaml", culture);
-            ResourceDictionary resourceDictionary = dictionaryList.FirstOrDefault(d => d.Source.OriginalString == requestedCulture);
+            ResourceDictionary resourceDictionary = dictionaryList.FirstOrDefault(d => d.Source.OriginalString.EndsWith(requestedCulture));
             if (resourceDictionary == null)
             {
                 requestedCulture = "Strings.xaml";
-                resourceDictionary = dictionaryList.FirstOrDefault(d => d.Source.OriginalString == requestedCulture);
+                resourceDictionary = dictionaryList.FirstOrDefault(d => d.Source.OriginalString.EndsWith(requestedCulture));
             }
 
             // If we have the requested resource, remove it from the list and place at the end.\      
@@ -103,6 +180,18 @@ namespace Minecraft_Server_Starter
         }
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
