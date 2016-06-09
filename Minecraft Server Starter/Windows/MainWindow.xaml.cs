@@ -438,7 +438,7 @@ namespace Minecraft_Server_Starter
             logBoxMenu.IsOpen = false;
             var sfd = new SaveFileDialog()
             {
-                FileName = "mss_log_" + DateTime.Now.ToShortDateString(),
+                FileName = "mss_log_" + DateTime.Now.ToShortDateString().Replace('/', '-'),
                 Filter = Res.GetStr("sTextFileFilter")
             };
             if (sfd.ShowDialog() ?? false)
