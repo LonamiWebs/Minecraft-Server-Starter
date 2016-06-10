@@ -199,6 +199,7 @@ namespace Minecraft_Server_Starter
                     ms.Player += playerEvent;
 
                     serverStatusChanged(Status.Opening);
+                    playerList.Items.Clear();
                     logBox.Clear();
 
                     ms.Start();
