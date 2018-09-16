@@ -30,7 +30,8 @@ namespace Minecraft_Server_Starter
         //   [(INFO|WARN|ERROR)]
         //   [Server thread/(INFO|WARN|ERROR)]
         //   [Server Shutdown Thread/INFO]
-        Regex typeRegex = new Regex(@"\[(?:Server(?: Shutdown)? (?:t|T)hread\/)?(INFO|WARN|WARNING|ERROR)\]", RegexOptions.Compiled);
+        //   ...and any other string before /INFO etc. (issue #1)
+        Regex typeRegex = new Regex(@"\[(?:[\w\s]+\/)?(INFO|WARN|WARNING|ERROR)\]", RegexOptions.Compiled);
 
         // only one format: Done (d...
         Regex loadedRegex = new Regex(@"Done \(\d", RegexOptions.Compiled);
